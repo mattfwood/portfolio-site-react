@@ -17,7 +17,7 @@ class ProjectContainer extends Component {
     axios
       .get('https://api.github.com/users/mattfwood/repos')
       .then(response => {
-        const projects = response.data.filter(project => project.fork === false);
+        const projects = response.data.filter(project => project.fork === false && project.description)
         console.log(projects);
         this.setState({ projects });
       })

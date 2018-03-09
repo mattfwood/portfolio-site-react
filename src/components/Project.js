@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import LanguageBadge from './LanguageBadge';
 
 const Project = ({ project }) => {
   return (
@@ -8,13 +9,9 @@ const Project = ({ project }) => {
       <div className="project-card">
         <div className="project-header">
           {project.name.replace(/-/g, ' ')}
-          <span className={`language-badge ${project.language}`}>
-            {project.language}
-          </span>
+          <LanguageBadge language={project.language} />
         </div>
-        <div className="project-body">
-          {project.description}
-        </div>
+        <div className="project-body">{project.description}</div>
       </div>
     </Col>
   );
