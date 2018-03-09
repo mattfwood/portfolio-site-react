@@ -11,13 +11,13 @@ const IndexPage = () => (
     </Row>
     
     <Row center="xs">
-      <Col xs={4}>
+      <Col md={4}>
         Loyal
       </Col>
-      <Col xs={4}>
+      <Col md={4}>
         Hard-working
       </Col>
-      <Col xs={4}>
+      <Col md={4}>
         Jackhammer
       </Col>
     </Row>
