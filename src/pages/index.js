@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import Projects from '../components/Projects';
+import ProjectContainer from '../components/ProjectContainer';
 
 const IndexPage = () => (
   <Grid>
@@ -23,7 +23,8 @@ const IndexPage = () => (
           Item 3
       </Col>
     </Row>
-    <Projects />
+
+    <ProjectContainer />
 
     <Link to="/page-2/">Go to page 2</Link>
   </Grid>
