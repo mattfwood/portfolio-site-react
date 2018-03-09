@@ -9,6 +9,7 @@ const IndexPage = () => (
     <Row center="xs">
       <h1>Matt Wood's Portfolio</h1>
     </Row>
+    
     <Row center="xs">
       <Col xs={4}>
         Loyal
