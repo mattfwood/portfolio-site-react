@@ -7,11 +7,8 @@ import ProjectContainer from '../components/ProjectContainer';
 const IndexPage = () => (
   <Grid>
     <Row center="xs">
-      <h1>Matt Wood</h1>
+      <h1>Matt Wood's Portfolio</h1>
     </Row>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-
     <Row center="xs">
       <Col xs={4}>
           Item 1
