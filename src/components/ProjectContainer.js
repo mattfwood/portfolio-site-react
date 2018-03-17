@@ -18,6 +18,7 @@ class ProjectContainer extends Component {
     axios
       .get('https://api.github.com/users/mattfwood/repos')
       .then(response => {
+        // only get projects that aren't forked from other repos and have a description
         const projects = response.data.filter(
           project => project.fork === false && project.description
         );

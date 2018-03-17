@@ -1,11 +1,14 @@
+@import "normalize";
+
 html {
-	font-family: sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 
 body {
 	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 article,
@@ -241,7 +244,7 @@ html {
 
 body {
 	color: hsla(0, 0%, 0%, 0.8);
-	font-family: georgia, serif;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-weight: normal;
 	word-wrap: break-word;
 	font-kerning: normal;
@@ -710,9 +713,13 @@ pre tt:after {
 	}
 }
 
+.project-wrapper {
+	text-decoration: none !important;
+	color: initial !important;
+}
+
 .project-card {
-  // padding: 20px;
-  // height: 125px;
+	border-radius: 6px;
 	border: 0;
 	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 	margin-top: 25px;
@@ -730,6 +737,8 @@ pre tt:after {
 		font-weight: 600;
 		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 		text-transform: capitalize;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
 
 		display: flex;
 		flex-direction: row;
@@ -770,7 +779,7 @@ pre tt:after {
 		transform: translateY(-5px);
 
 		.project-header {
-			background-color: #cfcfcf;
+			background-color: #e7e6e6;
 		}
 	}
 }
@@ -779,4 +788,3 @@ pre tt:after {
 	width: 400px;
 	height: 600px;
 }
-
