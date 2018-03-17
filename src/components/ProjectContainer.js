@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import Link from 'gatsby-link';
 
 import Project from './Project';
 
@@ -9,7 +10,7 @@ class ProjectContainer extends Component {
     super(props);
 
     this.state = {
-      projects: []
+      projects: [],
     };
   }
 
@@ -17,7 +18,9 @@ class ProjectContainer extends Component {
     axios
       .get('https://api.github.com/users/mattfwood/repos')
       .then(response => {
-        const projects = response.data.filter(project => project.fork === false && project.description)
+        const projects = response.data.filter(
+          project => project.fork === false && project.description
+        );
         console.log(projects);
         this.setState({ projects });
       })

@@ -717,6 +717,13 @@ pre tt:after {
 	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 	margin-top: 25px;
 
+	a {
+		color: initial !important;
+		text-decoration: none !important;
+	}
+
+	transition: all 300ms ease;
+
 	.project-header {
 		padding: 10px 20px;
 		background-color: hsl(0, 0%, 97%);
@@ -727,6 +734,8 @@ pre tt:after {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+
+		transition: all 300ms ease;
 
 		.language-badge {
 			font-size: 12px;
@@ -756,9 +765,18 @@ pre tt:after {
 		padding: 20px;
 		font-size: 16px;
 	}
+
+	&:hover {
+		transform: translateY(-5px);
+
+		.project-header {
+			background-color: #cfcfcf;
+		}
+	}
 }
 
 .websocket-game-iframe {
 	width: 400px;
 	height: 600px;
 }
+
