@@ -5,18 +5,63 @@ import LanguageBadge from './LanguageBadge';
 import Link from 'gatsby-link';
 
 const Project = ({ project }) => {
-  return (
-    <Col xs={6}>
-      <a className="project-wrapper" href={project.svn_url}>
-        <div className="project-card">
-          <div className="project-header">
-            {project.name.replace(/-/g, ' ')}
-            <LanguageBadge language={project.language} />
-          </div>
-          <div className="project-body">{project.description}</div>
+  let languages;
+
+  if (!Array.isArray(project.language)) {
+    languages = Array(project.language);
+  } else {
+    languages = project.language;
+  }
+
+  const highlights = () => {
+    if (project.highlights) {
+      return (
+        <div className="project-highlights">
+          {
+            project.highlights.map(highlight => (
+              <div>
+                - {highlight}
+              </div>
+            ))
+          }
         </div>
-      </a>
-    </Col>
+      )
+    }
+    return null;
+  }
+
+  return (
+    <div className="Project">
+      <Row center="xs">
+        <Col xs={12}>
+          <a href={project.svn_url} className="project-title">
+            <h3>{project.name.replace(/-/g, ' ')}</h3>
+          </a>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={6}>
+          (Screenshot Here)
+        </Col>
+        <Col xs={12} md={6}>
+          <a className="project-wrapper">
+            <div className="project-card">
+              <div className="project-body">
+                {project.description}
+                {highlights()}
+              </div>
+              <div className="project-footer">
+                {
+                 languages.map(language => (
+                    <LanguageBadge language={language} />
+                  ))
+                }
+              </div>
+            </div>
+          </a>
+        </Col>
+      </Row>
+    </div>
   );
 };
 

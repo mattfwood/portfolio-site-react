@@ -4,6 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import Link from 'gatsby-link';
 
 import Project from './Project';
+import projects from './projects';
 
 class ProjectContainer extends Component {
   constructor(props) {
@@ -34,11 +35,14 @@ class ProjectContainer extends Component {
     return (
       <div>
         <h1 className="section-header">🏗️ Projects️</h1>
-        <Row>
-          {this.state.projects.map((project, index) => (
-            <Project project={project} key={index} />
-          ))}
-        </Row>
+        {
+          projects.map(project => (
+            <Project project={project} />
+          ))
+        }
+        {this.state.projects.map((project, index) => (
+          <Project project={project} key={index} />
+        ))}
       </div>
     );
   }
