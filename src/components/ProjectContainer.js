@@ -32,11 +32,14 @@ class ProjectContainer extends Component {
 
   render() {
     return (
-      <Row>
-        {this.state.projects.map((project, index) => (
-          <Project project={project} key={index} />
-        ))}
-      </Row>
+      <div>
+        <h1 className="section-header">🏗️ Projects️</h1>
+        <Row>
+          {this.state.projects.map((project, index) => (
+            <Project project={project} key={index} />
+          ))}
+        </Row>
+      </div>
     );
   }
 }

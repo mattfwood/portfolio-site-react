@@ -1,33 +1,69 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'gatsby-link';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}
-  >
+class Header extends Component {
+  state = {
+    scrollHeight: 0,
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = (event) => {
+    const scrollTop = window.scrollY;
+    this.setState({
+      scrollHeight: window.scrollY
+    })
+  }
+
+  render() {
+    const { scrollHeight } = this.state;
+
+    return (
     <div
       style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
+        background: 'teal',
+        marginBottom: '1.45rem',
       }}
+      className={`header ${scrollHeight === 0 ? 'transparent' : ''}`}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
+      <Grid>
+        <Row middle="xs" between="xs" style={{ width: '100%' }}>
+          <Col>
+            <h1 style={{ margin: 0 }}>
+              <Link
+                to="/"
+                style={{
+                  textDecoration: 'none',
+                }}
+              >
+                Matt Wood
+              </Link>
+            </h1>
+          </Col>
+          <Col>
+            <Row className="nav">
+              <Col>
+                <div className="nav-item">About</div>
+              </Col>
+              <Col>
+                <div className="nav-item">Projects</div>
+              </Col>
+              <Col>
+                <div className="nav-item">Contact</div>
+              </Col>
+              <Col>
+                <div className="nav-item">About</div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
     </div>
-  </div>
-);
+    )
+  }
+}
 
 export default Header;
