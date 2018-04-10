@@ -34,10 +34,10 @@ class ProjectContainer extends Component {
   render() {
     return (
       <div>
-        <h1 className="section-header">🏗️ Projects️</h1>
+        <h2 className="section-header">🏗️ Projects️</h2>
         {
-          projects.map(project => (
-            <Project project={project} />
+          projects.map((project, index) => (
+            <Project project={project} key={index} />
           ))
         }
         {this.state.projects.map((project, index) => (

@@ -18,8 +18,8 @@ const Project = ({ project }) => {
       return (
         <div className="project-highlights">
           {
-            project.highlights.map(highlight => (
-              <div>
+            project.highlights.map((highlight, index) => (
+              <div key={index}>
                 - {highlight}
               </div>
             ))
@@ -52,8 +52,8 @@ const Project = ({ project }) => {
               </div>
               <div className="project-footer">
                 {
-                 languages.map(language => (
-                    <LanguageBadge language={language} />
+                 languages.map((language, index) => (
+                    <LanguageBadge language={language} key={index} />
                   ))
                 }
               </div>

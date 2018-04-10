@@ -55,7 +55,7 @@ class Header extends Component {
                 <div className="nav-item">Contact</div>
               </Col>
               <Col>
-                <div className="nav-item">About</div>
+                <div className="nav-item">Blog</div>
               </Col>
             </Row>
           </Col>
