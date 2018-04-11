@@ -9,7 +9,9 @@ const propTypes = {
 const BlogSection = ({ posts }) => (
   <div>
     <h2>Blog</h2>
-    {posts.map(post => <Link to={`/posts/${post.node.id}`}>{post.node.title}</Link>)}
+    <div>
+      {posts.map(post => <Link to={`/posts/${post.node.id}`}>{post.node.title}</Link>)}
+    </div>
   </div>
 );
 
