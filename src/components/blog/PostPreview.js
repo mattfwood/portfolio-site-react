@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { Row, Col } from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 const propTypes = {
   post: PropTypes.shape({
@@ -13,7 +14,6 @@ const propTypes = {
 
 const PostPreview = (props) => {
   const { post } = props;
-  console.log(post);
   return (
     <Col xs={12} md={6}>
       <Link to={`/posts/${post.id}`}>
@@ -21,7 +21,7 @@ const PostPreview = (props) => {
       </Link>
       <div>
         {/* get the first line of the blog post */}
-        {post.body.body.split('\n')[0]}
+        <ReactMarkdown source={post.subhead} />
       </div>
     </Col>
   );

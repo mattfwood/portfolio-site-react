@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
+
 import PostPreview from './PostPreview';
 
 const propTypes = {
