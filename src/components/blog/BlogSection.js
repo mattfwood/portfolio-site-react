@@ -27,7 +27,7 @@ class BlogSection extends Component {
       <div>
         {
           posts.map((post, index) => (
-            <Link to={`/post?id=${post.node.id}`}>{post.node.title}</Link>
+            <Link to={`/post/${post.node.id}`}>{post.node.title}</Link>
           ))
         }
         {/* <Route path="/post/:id" component={BlogPost} />; */}

@@ -8,34 +8,65 @@ import BlogPost from '../components/blog/BlogPost';
 import client from '../client';
 
 class Post extends Component {
-  state = {
-    post: {}
-  }
   componentWillMount() {
-    const id = this.props.location.search.split('=')[1]
-    console.log(id);
+    // const id = this.props.location.search.split('=')[1]
+    // console.log(id);
 
-    client.getEntry(id)
-      .then((entry) => {
-        console.log(entry);
-        this.setState({ post: entry });
-      })
-      .catch(console.error);
+    // client.getEntry(id)
+    //   .then((entry) => {
+    //     console.log(entry);
+    //     this.setState({ post: entry });
+    //   })
+    //   .catch(console.error);
   }
 
   render() {
-    const { post } = this.state;
-    if (Object.keys(post).length > 0) {
+    // const { post } = this.state;
       return (
         <Grid>
-          <h1>{post.fields.title}</h1>
-          <p>{post.fields.createdAt}</p>
-          <ReactMarkdown source={post.fields.body} />
+          <h1>Title</h1>
+          <p>Date</p>
+          <ReactMarkdown source={`## Subhead`} />
         </Grid>
       )
-    }
-    return null;
   }
 }
 
 export default Post;
+
+
+export const pageQuery = graphql`
+  query pageQuery($id: String!) {
+    contentfulProduct(id: { eq: $id }) {
+      productName {
+        productName
+      }
+      productDescription {
+        childMarkdownRemark {
+          html
+        }
+      }
+      price
+      image {
+        resolutions(width: 50, height: 50) {
+          base64
+          src
+          srcSet
+          height
+          width
+        }
+      }
+      brand {
+        companyName {
+          companyName
+        }
+      }
+      categories {
+        id
+        title {
+          title
+        }
+      }
+    }
+  }
+`
