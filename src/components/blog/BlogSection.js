@@ -12,22 +12,22 @@ class BlogSection extends Component {
   }
 
   componentWillMount() {
-    client.getEntries()
-      .then(({ items }) => {
-        console.log(items);
-        this.setState({
-          posts: items
-        })
-      })
-      .catch(console.error);
+    // client.getEntries()
+    //   .then(({ items }) => {
+    //     console.log(items);
+    //     this.setState({
+    //       posts: items
+    //     })
+    //   })
+    //   .catch(console.error);
   }
   render() {
-    const { posts } = this.state;
+    const { posts } = this.props;
     return (
       <div>
         {
           posts.map((post, index) => (
-            <Link to={`/post?id=${post.sys.id}`}>{post.fields.title}</Link>
+            <Link to={`/post?id=${post.node.id}`}>{post.node.title}</Link>
           ))
         }
         {/* <Route path="/post/:id" component={BlogPost} />; */}
