@@ -60,27 +60,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             },
           });
         });
-      })
-      .then(() => {
-        graphql(
-          `
-            {
-              allContentfulCategory(limit: 1000) {
-                edges {
-                  node {
-                    id
-                  }
-                }
-              }
-            }
-          `,
-        ).then((result) => {
-          if (result.errors) {
-            reject(result.errors);
-          }
-
-          resolve();
-        });
+        resolve();
       });
   });
 };

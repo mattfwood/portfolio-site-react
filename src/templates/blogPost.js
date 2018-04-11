@@ -9,12 +9,12 @@ const propTypes = {
 const PostTemplate = (props) => {
   console.log(props);
   const post = props.data.contentfulPost;
-  const { body, title } = post;
+  const { title } = post;
   return (
     <div>
       <h1>{title}</h1>
       <div>
-        <ReactMarkdown source={body.body} />
+        <ReactMarkdown source={props.data.contentfulPost.body.body} />
       </div>
     </div>
   );
