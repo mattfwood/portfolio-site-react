@@ -14,7 +14,7 @@ const PostTemplate = (props) => {
     <div>
       <h1>{title}</h1>
       <div>
-        {/* <ReactMarkdown source={props.data.contentfulPost.body.body} /> */}
+        <ReactMarkdown source={props.data.contentfulPost.body.body} />
       </div>
     </div>
   );
