@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Row } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
+import PostPreview from './PostPreview';
 
 const propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -8,10 +9,8 @@ const propTypes = {
 
 const BlogSection = ({ posts }) => (
   <div>
-    <h2>Blog</h2>
-    <div>
-      {posts.map(post => <Link to={`/posts/${post.node.id}`}>{post.node.title}</Link>)}
-    </div>
+    <h2 className="section-header">Blog</h2>
+    <Row>{posts.map(post => <PostPreview post={post.node} />)}</Row>
   </div>
 );
 

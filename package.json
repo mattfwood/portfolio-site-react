@@ -27,13 +27,21 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "husky": "^1.0.0-rc.1",
+    "lint-staged": "^7.0.4",
     "prettier": "^1.11.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm lint"
+    }
   }
 }
