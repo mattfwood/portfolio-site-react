@@ -1,41 +1,18 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import Link from 'gatsby-link';
-import { Route } from 'react-router-dom';
+import * as PropTypes from 'prop-types';
 
-import BlogPost from './BlogPost'
-import client from '../../client'
+const propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
-class BlogSection extends Component {
-  state = {
-    posts: []
-  }
+const BlogSection = ({ posts }) => (
+  <div>
+    <h2>Blog</h2>
+    {posts.map(post => <Link to={`/posts/${post.node.id}`}>{post.node.title}</Link>)}
+  </div>
+);
 
-  componentWillMount() {
-    // client.getEntries()
-    //   .then(({ items }) => {
-    //     console.log(items);
-    //     this.setState({
-    //       posts: items
-    //     })
-    //   })
-    //   .catch(console.error);
-  }
-  render() {
-    const { posts } = this.props;
-    return (
-      <div>
-        {
-          posts.map((post, index) => (
-            <Link to={`/post/${post.node.id}`}>{post.node.title}</Link>
-          ))
-        }
-        {/* <Route path="/post/:id" component={BlogPost} />; */}
-      </div>
-    );
-  }
-}
-
-// <BlogPost key={index} post={post} />
+BlogSection.propTypes = propTypes;
 
 export default BlogSection;

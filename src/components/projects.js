@@ -8,7 +8,7 @@ export default [
     highlights: [
       'Uses Firebase to sync state across devices in realtime',
       'Serverless Deployment',
-      'User authentication through Firebase'
-    ]
+      'User authentication through Firebase',
+    ],
   },
-]
+];

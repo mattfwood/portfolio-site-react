@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
+import * as PropTypes from 'prop-types';
 import LanguageBadge from './LanguageBadge';
-import Link from 'gatsby-link';
+
+const propTypes = {
+  project: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 const Project = ({ project }) => {
   let languages;
@@ -17,18 +20,12 @@ const Project = ({ project }) => {
     if (project.highlights) {
       return (
         <div className="project-highlights">
-          {
-            project.highlights.map((highlight, index) => (
-              <div key={index}>
-                - {highlight}
-              </div>
-            ))
-          }
+          {project.highlights.map((highlight, index) => <div key={index}>- {highlight}</div>)}
         </div>
-      )
+      );
     }
     return null;
-  }
+  };
 
   return (
     <div className="Project">
@@ -51,11 +48,9 @@ const Project = ({ project }) => {
                 {highlights()}
               </div>
               <div className="project-footer">
-                {
-                 languages.map((language, index) => (
-                    <LanguageBadge language={language} key={index} />
-                  ))
-                }
+                {languages.map((language, index) => (
+                  <LanguageBadge language={language} key={index} />
+                ))}
               </div>
             </div>
           </a>
@@ -64,5 +59,7 @@ const Project = ({ project }) => {
     </div>
   );
 };
+
+Project.propTypes = propTypes;
 
 export default Project;

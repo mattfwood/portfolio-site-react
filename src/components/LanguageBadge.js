@@ -9,7 +9,7 @@ const LanguageBadge = ({ language }) => {
 };
 
 LanguageBadge.propTypes = {
-  language: PropTypes.string
+  language: PropTypes.string.isRequired,
 };
 
 export default LanguageBadge;

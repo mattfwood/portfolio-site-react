@@ -11,7 +11,7 @@ const TemplateWrapper = ({ children }) => (
       title="Matt Wood | Developer"
       meta={[
         { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'keywords', content: 'sample, something' },
       ]}
     />
     <Header />
@@ -20,7 +20,7 @@ const TemplateWrapper = ({ children }) => (
         // margin: '0 auto',
         maxWidth: 960,
         padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0
+        paddingTop: 0,
       }}
       className="page-content"
     >
@@ -30,7 +30,7 @@ const TemplateWrapper = ({ children }) => (
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.func.isRequired,
 };
 
 export default TemplateWrapper;

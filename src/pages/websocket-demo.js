@@ -1,13 +1,13 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
 const SecondPage = () => (
   <div>
     <Link to={'/'}>Back</Link>
     <div>
-      <iframe className="websocket-game-iframe" src="https://websocket-game.firebaseapp.com/" frameborder="0" />
+      <iframe title="websocket-iframe" className="websocket-game-iframe" src="https://websocket-game.firebaseapp.com/" frameBorder="0" />
     </div>
   </div>
-)
+);
 
-export default SecondPage
+export default SecondPage;

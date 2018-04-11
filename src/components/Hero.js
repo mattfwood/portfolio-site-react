@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 
-class Hero extends Component {
-  render() {
-    return (
-      <div className="Hero">
-        <Row middle="xs">
-          <Col>
-            <div className="hero-headline">
+const Hero = () => (
+  <div className="Hero">
+    <Row middle="xs">
+      <Col>
+        <div className="hero-headline">
               Matt is a Web Developer specializing in React, Node and
               Single-Page Applications
-            </div>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
-}
+        </div>
+      </Col>
+    </Row>
+  </div>
+);
 
 export default Hero;
