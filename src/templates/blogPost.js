@@ -7,6 +7,7 @@ const propTypes = {
 };
 
 const PostTemplate = (props) => {
+  console.log(props);
   const post = props.data.contentfulPost;
   const { body, title } = post;
   return (
