@@ -28,7 +28,7 @@ class ProjectContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="project-section">
         <h2 className="section-header">
           <span role="img" aria-label="construction crane emoji">
             🏗️

@@ -6,8 +6,8 @@ const Hero = () => (
     <Row middle="xs">
       <Col>
         <div className="hero-headline">
-              Matt is a Web Developer specializing in React, Node and
-              Single-Page Applications
+          {/* Matt is a Web Developer specializing in React, Node and
+              Single-Page Applications */}
         </div>
       </Col>
     </Row>

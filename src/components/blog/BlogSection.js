@@ -9,9 +9,9 @@ const propTypes = {
 };
 
 const BlogSection = ({ posts }) => (
-  <div>
+  <div className="blog-section">
     <h2 className="section-header">Blog</h2>
-    <Row>{posts.map(post => <PostPreview post={post.node} />)}</Row>
+    <Row>{posts.map((post, index) => <PostPreview key={index} post={post.node} />)}</Row>
   </div>
 );
 
