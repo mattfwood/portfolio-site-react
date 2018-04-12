@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactSection = () => (
   <div className="contact-section">
-    <h2>
+    <h2 className="section-header">
       <span role="img" aria-label="megaphone emoji">
         📣{' '}
       </span>Contact
