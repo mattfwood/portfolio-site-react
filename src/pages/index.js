@@ -15,6 +15,16 @@ const propTypes = {
 };
 
 class IndexPage extends Component {
+  state = {
+    heroAnimation: false,
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ heroAnimation: true });
+    }, 800);
+  }
+
   scrollToSection = (clickedSection) => {
     const section = document.querySelector(`.${clickedSection}`);
     const offsetTop = section.offsetTop - 125;
@@ -30,7 +40,7 @@ class IndexPage extends Component {
     const posts = this.props.data.allContentfulPost.edges;
     return (
       <div>
-        <Header scrollToSection={this.scrollToSection} />
+        <Header scrollToSection={this.scrollToSection} menu/>
         <div
           style={{
             // margin: '0 auto',
@@ -41,12 +51,12 @@ class IndexPage extends Component {
           className="page-content"
         >
           <Grid>
-            <Hero />
+            <Hero animation={this.state.heroAnimation}/>
             <AboutSection />
             <ProjectContainer />
-            <ContactSection />
             <BlogSection posts={posts} />
-            <Link to="/websocket-demo/">View Websocket Demo</Link>
+            <ContactSection />
+            {/* <Link to="/websocket-demo/">View Websocket Demo</Link> */}
           </Grid>
         </div>
       </div>

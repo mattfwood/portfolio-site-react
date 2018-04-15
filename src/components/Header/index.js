@@ -185,7 +185,11 @@ class Header extends Component {
                 </Link>
               </h1>
             </Col>
-            <Col>{nav()}</Col>
+            {
+              this.props.menu && (
+                <Col>{nav()}</Col>
+              )
+            }
           </Row>
         </Grid>
       </div>

@@ -1,19 +1,27 @@
 import React from 'react';
+import { Grid } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+
+import Header from '../components/Header';
 
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-const PostTemplate = (props) => {
+const PostTemplate = props => {
   const post = props.data.contentfulPost;
   const { title } = post;
   return (
     <div>
-      <h1>{title}</h1>
-      <div>
-        <ReactMarkdown source={props.data.contentfulPost.body.body} />
+      <Header menu={false}/>
+      <div className="page-content">
+        <Grid>
+          <h2>{title}</h2>
+          <div>
+            <ReactMarkdown source={props.data.contentfulPost.body.body} />
+          </div>
+        </Grid>
       </div>
     </div>
   );
