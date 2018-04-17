@@ -4,7 +4,10 @@ const AboutSection = () => (
   <div className="about-section">
     <h2 className="section-header"><span role="img" aria-label="person surprised emoji">🙇‍ </span>About</h2>
     <div className="about-body">
-      Matt something something
+      <p>I am a self-taught Developer from Dallas, Texas.</p>
+      <p>I consider myself a React convert, Node advocate and Javascript apologist.</p>
+      {/* <p>When I'm not accidentally starting an
+        other personal project, I do other things ??</p> */}
     </div>
   </div>
 );

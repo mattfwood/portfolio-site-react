@@ -6,6 +6,7 @@ import * as PropTypes from 'prop-types';
 
 const propTypes = {
   scrollToSection: PropTypes.func.isRequired,
+  menu: PropTypes.bool,
 };
 
 class Header extends Component {
@@ -44,7 +45,7 @@ class Header extends Component {
   };
 
   toggleMobileMenu = () => {
-    console.log('MOBILE MENU TOGGLE');
+    // console.log('MOBILE MENU TOGGLE');
     this.setState({
       mobileMenuOpen: !this.state.mobileMenuOpen,
     });
@@ -198,5 +199,9 @@ class Header extends Component {
 }
 
 Header.propTypes = propTypes;
+
+Header.defaultProps = {
+  menu: false,
+};
 
 export default Header;

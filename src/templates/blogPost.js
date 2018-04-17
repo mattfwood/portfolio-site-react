@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import Moment from 'react-moment';
 
 import Header from '../components/Header';
 
@@ -9,18 +10,30 @@ const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-const PostTemplate = props => {
+const PostTemplate = (props) => {
   const post = props.data.contentfulPost;
-  const { title } = post;
+  console.log(post);
+  const { title, body, subhead, createdAt } = post;
   return (
     <div>
-      <Header menu={false}/>
+      <Header menu={false} />
       <div className="page-content">
         <Grid>
-          <h2>{title}</h2>
-          <div>
-            <ReactMarkdown source={props.data.contentfulPost.body.body} />
-          </div>
+          <Row>
+            <Col xs={12}>
+              <div className="blog-post-wrapper">
+                <div className="blog-post-heading">
+                  <h2 className="blog-post-title">{title}</h2>
+                  <h4 className="blog-post-subhead">{subhead}</h4>
+                  <Moment className="blog-post-date" format="MMM DD, YYYY">{createdAt}</Moment>
+                </div>
+                <hr />
+                <div className="blog-post-body">
+                  <ReactMarkdown source={body.body} />
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Grid>
       </div>
     </div>
@@ -36,6 +49,8 @@ export const pageQuery = graphql`
     contentfulPost(id: { eq: $id }) {
       id
       title
+      subhead
+      createdAt
 
       body {
         id

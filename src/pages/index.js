@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
 import * as PropTypes from 'prop-types';
 import { Grid } from 'react-flexbox-grid';
 
@@ -40,7 +39,7 @@ class IndexPage extends Component {
     const posts = this.props.data.allContentfulPost.edges;
     return (
       <div>
-        <Header scrollToSection={this.scrollToSection} menu/>
+        <Header scrollToSection={this.scrollToSection} menu />
         <div
           style={{
             // margin: '0 auto',
@@ -51,7 +50,7 @@ class IndexPage extends Component {
           className="page-content"
         >
           <Grid>
-            <Hero animation={this.state.heroAnimation}/>
+            <Hero animation={this.state.heroAnimation} />
             <AboutSection />
             <ProjectContainer />
             <BlogSection posts={posts} />

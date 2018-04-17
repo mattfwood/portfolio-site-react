@@ -17,6 +17,7 @@
     "react-flexbox-grid": "^2.0.0",
     "react-helmet": "^5.2.0",
     "react-markdown": "^3.3.0",
+    "react-moment": "^0.7.0",
     "slash": "^2.0.0"
   },
   "keywords": [
@@ -42,7 +43,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": ""
     }
   }
 }

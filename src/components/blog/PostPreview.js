@@ -12,10 +12,9 @@ const propTypes = {
   }).isRequired,
 };
 
-const PostPreview = props => {
-  const { post } = props;
-  return (
-    <Col xs={12} md={6} className="post-preview">
+const PostPreview = ({ post }) => (
+  <Col xs={12} md={6}>
+    <div className="post-preview">
       <Link to={`/posts/${post.id}`}>
         <h4>{post.title}</h4>
       </Link>
@@ -23,9 +22,9 @@ const PostPreview = props => {
         {/* get the first line of the blog post */}
         <ReactMarkdown source={post.subhead} />
       </div>
-    </Col>
-  );
-};
+    </div>
+  </Col>
+);
 
 PostPreview.propTypes = propTypes;
 
