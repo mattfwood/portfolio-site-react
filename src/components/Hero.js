@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 
 const Hero = props => (
@@ -17,5 +18,9 @@ const Hero = props => (
     <div className="hero-animation hero-left" />
   </div>
 );
+
+Hero.propTypes = {
+  animation: PropTypes.bool.isRequired,
+};
 
 export default Hero;

@@ -11,7 +11,7 @@ const propTypes = {
 const BlogSection = ({ posts }) => (
   <div className="blog-section">
     <Grid>
-      <h2 className="section-header"><span role="image" aria-label="keyboard emoji">⌨️</span> Blog</h2>
+      <h2 className="section-header"><span role="img" aria-label="keyboard emoji">⌨️</span> Blog</h2>
       <Row>
         {posts.map((post, index) => <PostPreview key={index} post={post.node} />)}
       </Row>
