@@ -25,7 +25,9 @@ const PostTemplate = (props) => {
                 <div className="blog-post-heading">
                   <h2 className="blog-post-title">{title}</h2>
                   <h4 className="blog-post-subhead">{subhead}</h4>
-                  <Moment className="blog-post-date" format="MMM DD, YYYY">{createdAt}</Moment>
+                  <h5>
+                    <Moment className="blog-post-date" format="MMM DD, YYYY">{createdAt}</Moment>
+                  </h5>
                 </div>
                 <hr />
                 <div className="blog-post-body">
