@@ -18,9 +18,9 @@ export default [
     description:
       "The site you're currently on! Built with Gatsby's static site builder",
     highlights: [
-      'Uses Firebase to sync state across devices in realtime',
-      'Serverless Deployment',
-      'User authentication through Firebase',
+      'Uses GatsbyJS for static site building',
+      'Uses Contently headless CMS to deliver blog posts',
+      'Uses no CSS framework, with all styles custom-made',
     ],
   },
 ];
