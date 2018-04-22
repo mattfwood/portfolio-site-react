@@ -16,6 +16,8 @@
 .project-title {
   color: #222;
   text-transform: capitalize;
+  line-height: 1.1;
+  font-size: 1.38316rem;
 }
 
 .project-card {
@@ -95,4 +97,21 @@
       background-color: #e7e6e6;
     }
   }
+}
+
+.project-section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.source-icon {
+  width: 40px;
+  // height: 40px;
+  padding-left: 15px;
+  margin: 0;
 }

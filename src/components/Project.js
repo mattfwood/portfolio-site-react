@@ -3,6 +3,8 @@ import { Row, Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
 import LanguageBadge from './LanguageBadge';
 
+import SourceCodeIcon from '../layouts/icons/source-code-icon.svg';
+
 const propTypes = {
   project: PropTypes.objectOf(PropTypes.any).isRequired,
 };
@@ -31,9 +33,12 @@ const Project = ({ project }) => {
     <div className="Project">
       <Row center="xs">
         <Col xs={12}>
+          <div className="project-section-header">
+          <h3>{project.name.replace(/-/g, ' ')}</h3>
           <a href={project.svn_url} className="project-title">
-            <h3>{project.name.replace(/-/g, ' ')}</h3>
+            <img className="source-icon" src={SourceCodeIcon} alt="Github icon" />
           </a>
+          </div>
         </Col>
       </Row>
       <Row>
