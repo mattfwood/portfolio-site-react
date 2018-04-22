@@ -1,0 +1,46 @@
+.contact-body {
+  input, textarea, button {
+    width: 100%;
+    outline: 0;
+    color: #444;
+    background-color: rgba(0,0,0,0.05);
+    border-width: 2px;
+    border-style: solid;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-height: 32px;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    box-shadow: 0;
+    padding: 0.5rem;
+    border-color: rgba(0,0,0,0);
+    border-radius: 5px;
+    transition: all 200ms ease;
+
+    &:focus, &:active {
+      border-color: rgba(0,0,0,0.25);
+    }
+  }
+
+  .form-name, .form-email {
+    width: calc(50% - 5px);
+  }
+
+  .form-row + .form-row {
+    margin-top: 10px;
+  }
+
+  .contact-info-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button[type=submit] {
+    background-color: teal;
+    color: #FFF;
+    border-radius: 5px;
+  }
+}

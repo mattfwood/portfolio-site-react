@@ -8,7 +8,18 @@ const ContactSection = () => (
       </span>Contact
     </h2>
     <div className="contact-body">
-      <ul />
+      <form name="contact" method="POST" netlify>
+        <div className="form-row contact-info-row">
+          <input className="form-name" type="text" name="name" placeholder="Name" />
+          <input className="form-email" type="email" name="email" placeholder="Email" />
+        </div>
+        <div className="form-row">
+          <textarea name="message" placeholder="Message" />
+        </div>
+        <div className="form-row">
+          <button type="submit">Send</button>
+        </div>
+      </form>
     </div>
   </div>
 );

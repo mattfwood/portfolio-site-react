@@ -85,4 +85,18 @@
   }
 }
 
-  
+.back-arrow-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: teal;
+}
+
+.blog-back-arrow {
+  height: 40px;
+  width: 40px;
+  padding-right: 10px;
+  margin: 0;
+  color: teal;
+}

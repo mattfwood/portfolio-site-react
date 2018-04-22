@@ -164,13 +164,15 @@ class Header extends Component {
       );
     };
 
+    const headerOpaque = this.props.headerOpaque ? 'header-opaque' : ''
+
     return (
       <div
         style={{
           background: 'teal',
           marginBottom: '1.45rem',
         }}
-        className={`header ${scrollHeight === 0 ? 'transparent' : ''}`}
+        className={`header ${scrollHeight === 0 ? 'transparent' : ''} ${headerOpaque}`}
       >
         <Grid>
           <Row middle="xs" between="xs" style={{ width: '100%' }}>

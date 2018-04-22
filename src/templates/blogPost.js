@@ -3,8 +3,10 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Moment from 'react-moment';
+import Link from 'gatsby-link';
 
 import Header from '../components/Header';
+import ArrowLeft from '../layouts/icons/arrow-left.svg';
 
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
@@ -16,9 +18,17 @@ const PostTemplate = (props) => {
   const { title, body, subhead, createdAt } = post;
   return (
     <div>
-      <Header menu={false} />
+      <Header menu={false} headerOpaque />
       <div className="page-content">
         <Grid>
+          <Row>
+            <Link to="/">
+              <Col xs={12} className="back-arrow-row">
+                <img src={ArrowLeft} className="blog-back-arrow" alt="back arrow" />
+                <div>Back</div>
+              </Col>
+            </Link>
+          </Row>
           <Row>
             <Col xs={12}>
               <div className="blog-post-wrapper">

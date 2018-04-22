@@ -23,10 +23,12 @@
 
 .header.transparent {
   background-color: transparent !important;
-  color: #222 !important; 
+  // color: #222 !important; 
+  color: #FFF;
 
   a {
-    color: #222 !important;
+    color: #FFF;
+    // color: #222 !important;
   }
 }
 
@@ -34,5 +36,13 @@
   @media only screen and (max-width: 768px) {
     margin: 0;
     width: 100%;
+  }
+}
+
+.header-opaque {
+  color: #222 !important;
+
+  a {
+    color: #222 !important;
   }
 }
