@@ -37,14 +37,13 @@
     padding: 10px 20px;
     background-color: hsl(0, 0%, 97%);
     font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     text-transform: capitalize;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-
     display: flex;
     flex-direction: row;
+
     // justify-content: space-between;
 
     transition: all 300ms ease;
@@ -111,7 +110,50 @@
 
 .source-icon {
   width: 40px;
+
   // height: 40px;
   padding-left: 15px;
   margin: 0;
+}
+
+.project-name {
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+
+.project-demo-link {
+  color: #222;
+  text-decoration: none;
+  line-height: 1.25;
+  position: relative;
+  transition: all 200ms ease;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &:before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover {
+    // border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+
+    &:before {
+      width: 100%;
+    }
+  }
 }

@@ -22,7 +22,9 @@ const Project = ({ project }) => {
     if (project.highlights) {
       return (
         <div className="project-highlights">
-          {project.highlights.map((highlight, index) => <div key={index}>- {highlight}</div>)}
+          {project.highlights.map((highlight, index) => (
+            <div key={index}>- {highlight}</div>
+          ))}
         </div>
       );
     }
@@ -34,10 +36,18 @@ const Project = ({ project }) => {
       <Row center="xs">
         <Col xs={12}>
           <div className="project-section-header">
-          <h3>{project.name.replace(/-/g, ' ')}</h3>
-          <a href={project.svn_url} className="project-title">
-            <img className="source-icon" src={SourceCodeIcon} alt="Github icon" />
-          </a>
+            <a href={project.demoLink} className="project-demo-link">
+              <h3 className="project-name">
+                {project.name.replace(/-/g, ' ')}
+              </h3>
+            </a>
+            <a href={project.svn_url} className="project-title">
+              <img
+                className="source-icon"
+                src={SourceCodeIcon}
+                alt="Github icon"
+              />
+            </a>
           </div>
         </Col>
       </Row>
