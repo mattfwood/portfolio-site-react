@@ -12,11 +12,11 @@ const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-const PostTemplate = props => {
+const PostTemplate = (props) => {
   const post = props.data.contentfulPost;
   console.log(post);
   const { title, body, subhead, createdAt } = post;
-  const imageURL = post.image.resolutions.src
+  const imageURL = post.image.resolutions.src;
   return (
     <div>
       <Header menu={false} headerOpaque />
@@ -25,11 +25,7 @@ const PostTemplate = props => {
           <Row>
             <Link to="/">
               <Col xs={12} className="back-arrow-row">
-                <img
-                  src={ArrowLeft}
-                  className="blog-back-arrow"
-                  alt="back arrow"
-                />
+                <img src={ArrowLeft} className="blog-back-arrow" alt="back arrow" />
                 <div>Back</div>
               </Col>
             </Link>

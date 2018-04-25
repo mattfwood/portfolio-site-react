@@ -16,7 +16,7 @@ const propTypes = {
 class IndexPage extends Component {
   state = {
     heroAnimation: false,
-  }
+  };
 
   componentDidMount() {
     setTimeout(() => {
@@ -37,6 +37,7 @@ class IndexPage extends Component {
 
   render() {
     const posts = this.props.data.allContentfulPost.edges;
+    console.log(posts);
     return (
       <div>
         <Header scrollToSection={this.scrollToSection} menu />
@@ -75,6 +76,12 @@ export const pageQuery = graphql`
           id
           title
           subhead
+          createdAt
+          image {
+            resolutions {
+              src
+            }
+          }
 
           body {
             id
