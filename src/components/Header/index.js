@@ -51,12 +51,12 @@ class Header extends Component {
     });
   };
 
-  mobileMenuSelect = (section) => {
+  mobileMenuSelect = section => {
     // close mobile menu on select
     this.toggleMobileMenu();
     // scroll to section
     this.props.scrollToSection(section);
-  }
+  };
 
   render() {
     const { scrollHeight } = this.state;
@@ -112,7 +112,9 @@ class Header extends Component {
         );
       }
 
-      const mobileMenuVisible = this.state.mobileMenuOpen ? 'active' : 'inactive';
+      const mobileMenuVisible = this.state.mobileMenuOpen
+        ? 'active'
+        : 'inactive';
 
       return (
         <div className="mobile-menu-wrapper">
@@ -159,20 +161,27 @@ class Header extends Component {
             >
               Blog
             </div>
+            <div className="nav-item bottom-link">
+              <a href="https://github.com/mattfwood/portfolio-site-react">
+                View Source Code
+              </a>  
+            </div>
           </div>
         </div>
       );
     };
 
-    const headerOpaque = this.props.headerOpaque ? 'header-opaque' : ''
+    const headerOpaque = this.props.headerOpaque ? 'header-opaque' : '';
 
     return (
       <div
         style={{
-          background: 'teal',
+          background: '#1565c0',
           marginBottom: '1.45rem',
         }}
-        className={`header ${scrollHeight === 0 ? 'transparent' : ''} ${headerOpaque}`}
+        className={`header ${
+          scrollHeight === 0 ? 'transparent' : ''
+        } ${headerOpaque}`}
       >
         <Grid>
           <Row middle="xs" between="xs" style={{ width: '100%' }}>
@@ -188,11 +197,7 @@ class Header extends Component {
                 </Link>
               </h1>
             </Col>
-            {
-              this.props.menu && (
-                <Col>{nav()}</Col>
-              )
-            }
+            {this.props.menu && <Col>{nav()}</Col>}
           </Row>
         </Grid>
       </div>

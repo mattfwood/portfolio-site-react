@@ -1,6 +1,7 @@
 export default [
   {
     svn_url: 'https://github.com/mattfwood/meal-prep-sunday',
+    demoLink: 'https://mealprepsunday-186517.firebaseapp.com',
     language: ['JavaScript', 'React'],
     name: 'Meal Prep Sunday',
     description:
@@ -13,10 +14,11 @@ export default [
   },
   {
     svn_url: 'https://github.com/mattfwood/portfolio-site-react',
+    demoLink: 'https://quizzical-panini-aaeea0.netlify.com',
     language: ['JavaScript', 'React', 'Gatsby', 'GraphQL'],
     name: 'Portfolio Site',
     description:
-      "The site you're currently on! Built with Gatsby's static site builder",
+      "The site you're currently on, built with Gatsby JS and GraphQL for blog content",
     highlights: [
       'Uses GatsbyJS for static site building',
       'Uses Contently headless CMS to deliver blog posts',

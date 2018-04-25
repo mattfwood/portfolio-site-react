@@ -1,6 +1,6 @@
 .post-preview {
   padding: 20px;
-  
+
   + .post-preview {
     // margin-top: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -90,7 +90,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  color: teal;
+  color: #1565c0;
 }
 
 .blog-back-arrow {
@@ -98,7 +98,7 @@
   width: 40px;
   padding-right: 10px;
   margin: 0;
-  color: teal;
+  color: #1565c0;
 }
 
 .blog-header-image {

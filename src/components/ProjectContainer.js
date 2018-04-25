@@ -36,9 +36,9 @@ class ProjectContainer extends Component {
           Projects
         </h2>
         {projects.map((project, index) => <Project project={project} key={index} />)}
-        {this.state.githubProjects.map((project, index) => (
+        {/* {this.state.githubProjects.map((project, index) => (
           <Project project={project} key={index} />
-        ))}
+        ))} */}
       </div>
     );
   }
