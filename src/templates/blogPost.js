@@ -20,7 +20,7 @@ const PostTemplate = (props) => {
   return (
     <div>
       <Header menu={false} headerOpaque />
-      <div className="page-content">
+      <div className="page-content blog-post-container">
         <Grid>
           <Row>
             <Link to="/">
