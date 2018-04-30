@@ -36,7 +36,7 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  
+
   .post-preview-title {
     text-decoration: none !important;
     margin: 20px;
@@ -164,4 +164,19 @@
 
 .blog-post-container {
   padding-top: 50px;
+}
+
+.blog-post-wrapper a {
+	background-color: rgba(38,166,154,0.3);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	text-decoration: none;
+	text-decoration-line: none;
+	text-decoration-style: initial;
+	text-decoration-color: initial;
+  color: rgba(0,0,0,.8);
+  transition: all 200ms ease;
+
+  &:hover {
+    background-color: rgba(38,166,154,0.5);
+  }
 }
