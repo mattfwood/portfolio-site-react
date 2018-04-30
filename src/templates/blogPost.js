@@ -23,11 +23,11 @@ const PostTemplate = (props) => {
       <div className="page-content blog-post-container">
         <Grid>
           <Row>
-            <Link to="/">
-              <Col xs={12} className="back-arrow-row">
+            <Link to="/" className="back-arrow-link">
+              <div className="back-arrow-row">
                 <img src={ArrowLeft} className="blog-back-arrow" alt="back arrow" />
                 <div>Back</div>
-              </Col>
+              </div>
             </Link>
           </Row>
           <Row>

@@ -39,10 +39,11 @@
   }
 }
 
-.header-opaque {
+.header.header-opaque {
   color: #FFF !important;
   // background-color: rgb(21, 101, 192) !important;
-  background-color: rgb(38,166,154);
+  background-color: #1565c0 !important;
+  opacity: 1;
 
   a {
     color: #FFF !important;

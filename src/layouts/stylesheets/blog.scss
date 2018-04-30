@@ -136,12 +136,26 @@
   }
 }
 
+.back-arrow-link {
+  text-decoration: none !important;
+}
+
 .back-arrow-row {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   color: #1565c0;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  transition: all 200ms ease;
+  padding-left: 5px !important;
+  padding-right: 15px !important;
+  color: #222;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 .blog-back-arrow {
@@ -163,7 +177,7 @@
 }
 
 .blog-post-container {
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .blog-post-wrapper a {
