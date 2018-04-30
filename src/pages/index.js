@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import { Grid } from 'react-flexbox-grid';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import ContactSection from '../components/Contact/ContactSection';
 import ProjectContainer from '../components/ProjectContainer';
@@ -59,6 +60,7 @@ class IndexPage extends Component {
             {/* <Link to="/websocket-demo/">View Websocket Demo</Link> */}
           </Grid>
         </div>
+        <Footer />
       </div>
     );
   }
