@@ -8,7 +8,8 @@ const ContactSection = () => (
       </span>Contact
     </h2>
     <div className="contact-body">
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="contact-form" value="contact" />
         <div className="form-row contact-info-row">
           <input className="form-name" type="text" name="name" placeholder="Name" />
           <input className="form-email" type="email" name="email" placeholder="Email" />
