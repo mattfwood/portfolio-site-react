@@ -5,7 +5,7 @@ import { Row, Col } from 'react-flexbox-grid';
 const Hero = props => (
   <div className={`Hero ${props.animation ? 'active' : ''}`}>
     <Row middle="xs">
-      <Col>
+      <Col xs={12}>
         <div className="hero-headline">
           I am a Web Developer specializing in React, Node and
               Single-Page Applications
