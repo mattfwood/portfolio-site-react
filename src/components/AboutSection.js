@@ -8,6 +8,7 @@ const AboutSection = () => (
       <p>I'm a React convert, Node advocate and Javascript apologist.
 
         I believe in creating interactive web apps that are responsive and intuitive.</p>
+      {/* <p>When I'm not spinning up another side project, </p> */}
       {/* <p>When I'm not accidentally starting an
         other personal project, I do other things ??</p> */}
     </div>

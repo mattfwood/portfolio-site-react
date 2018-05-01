@@ -92,9 +92,9 @@ class Header extends Component {
                   className="nav-item"
                   role="button"
                   tabIndex={0}
-                  onClick={() => scrollToSection('contact-section')}
+                  onClick={() => scrollToSection('blog-section')}
                 >
-                  Contact
+                  Blog
                 </div>
               </Col>
               <Col>
@@ -102,9 +102,9 @@ class Header extends Component {
                   className="nav-item"
                   role="button"
                   tabIndex={0}
-                  onClick={() => scrollToSection('blog-section')}
+                  onClick={() => scrollToSection('contact-section')}
                 >
-                  Blog
+                  Contact
                 </div>
               </Col>
             </Row>
@@ -146,14 +146,6 @@ class Header extends Component {
               Projects
             </div>
             <div
-              className="nav-item mobile-nav-3"
-              role="button"
-              tabIndex={0}
-              onClick={() => this.mobileMenuSelect('contact-section')}
-            >
-              Contact
-            </div>
-            <div
               className="nav-item mobile-nav-4"
               role="button"
               tabIndex={0}
@@ -161,10 +153,18 @@ class Header extends Component {
             >
               Blog
             </div>
+            <div
+              className="nav-item mobile-nav-3"
+              role="button"
+              tabIndex={0}
+              onClick={() => this.mobileMenuSelect('contact-section')}
+            >
+              Contact
+            </div>
             <div className="nav-item bottom-link">
               <a href="https://github.com/mattfwood/portfolio-site-react">
                 View Source Code
-              </a>  
+              </a>
             </div>
           </div>
         </div>
