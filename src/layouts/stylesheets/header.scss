@@ -54,7 +54,8 @@
 .Footer {
   background-color: #343a40;
   color: #FFF;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
 
   a {
     color: #FFF;
@@ -63,4 +64,34 @@
   h4 {
     margin-bottom: 10px;
   }
+}
+
+.links-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+  align-items: center;
+  height: 100%;
+
+  a + a {
+    margin-left: 10px;
+  }
+
+  a {
+    transition: all 200ms ease;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  a:hover {
+    color: #BBBBBB;
+  }
+}
+
+.footer-icon {
+  width: 40px;
+  height: 40px;
 }

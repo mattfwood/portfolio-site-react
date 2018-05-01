@@ -25,6 +25,11 @@
     }
   }
 
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+
   .form-name, .form-email {
     width: calc(50% - 5px);
   }

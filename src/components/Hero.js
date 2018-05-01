@@ -12,10 +12,10 @@ const Hero = props => (
         </div>
       </Col>
     </Row>
-    <div className="hero-animation hero-top" />
+    {/* <div className="hero-animation hero-top" />
     <div className="hero-animation hero-right" />
     <div className="hero-animation hero-bottom" />
-    <div className="hero-animation hero-left" />
+    <div className="hero-animation hero-left" /> */}
   </div>
 );
 

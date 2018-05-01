@@ -42,6 +42,7 @@ class IndexPage extends Component {
     return (
       <div>
         <Header scrollToSection={this.scrollToSection} menu />
+        <Hero animation={this.state.heroAnimation} />
         <div
           style={{
             // margin: '0 auto',
@@ -52,7 +53,6 @@ class IndexPage extends Component {
           className="page-content"
         >
           <Grid>
-            <Hero animation={this.state.heroAnimation} />
             <AboutSection />
             <ProjectContainer />
             <BlogSection posts={posts} />
