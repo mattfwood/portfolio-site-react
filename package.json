@@ -21,6 +21,9 @@
     "react-helmet": "^5.2.0",
     "react-markdown": "^3.3.0",
     "react-moment": "^0.7.0",
+    "remark": "^9.0.0",
+    "remark-react": "^4.0.3",
+    "sanitize-html": "^1.18.2",
     "slash": "^2.0.0"
   },
   "keywords": [
