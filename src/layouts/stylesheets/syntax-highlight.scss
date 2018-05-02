@@ -161,20 +161,17 @@
 // //   }
 // // }
 
-.blog-post-body {
-  p {
-    margin: 0;
-  }
-}
-
 .gatsby-highlight {
   background: #282c34;
-  color: #ffffff;
+  // color: #ffffff;
+  color: #f7b83d;
   border-radius: 10px;
   overflow: auto;
   tab-size: 1.5em;
   -moz-tab-size: 1.5em;
+  margin-bottom: 1rem;
 }
+
 // .gatsby-highlight code[class*='language-'],
 .gatsby-highlight pre[class*='language-'],
 .gatsby-highlight pre.prism-code {
@@ -187,18 +184,22 @@
   padding: 10px !important;
   overflow: auto;
 }
+
 .gatsby-highlight + .gatsby-highlight {
   margin-top: 20px;
 }
+
 .gatsby-highlight-code-line {
   background-color: #14161a;
   display: block;
   margin: -0.125rem calc(-1rem - 15px);
   padding: 0.125rem calc(1rem + 15px);
 }
+
 .token.attr-name {
   color: #c5a5c5;
 }
+
 .token.comment,
 .token.block-comment,
 .token.prolog,
@@ -206,66 +207,87 @@
 .token.cdata {
   color: #999999;
 }
+
 .token.property,
 .token.number,
 .token.function-name,
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #5a9bcf;
+  color: #f7a21b;
 }
+
 .token.boolean {
   color: #ff8b50;
 }
+
 .token.tag {
   color: #fc929e;
 }
+
 .token.string {
-  color: #8dc891;
+  color: #FFF;
 }
+
 .token.punctuation {
-  color: #5fb3b3;
+  // color: #5fb3b3;
+  color: #ecf0f1;
 }
+
 .token.selector,
 .token.char,
 .token.builtin,
 .token.inserted {
   color: #d8dee9;
 }
+
 .token.function {
-  color: #79b6f2;
+  // color: #79b6f2;
+  color: #f0624b;
 }
+
 .token.operator,
 .token.entity,
 .token.url,
 .token.variable {
-  color: #d7deea;
+  // color: #d7deea;
+  color: #e74c3c;
 }
+
 .token.attr-value {
   color: #8dc891;
 }
+
 .token.keyword {
-  color: #c5a5c5;
+  // color: #c5a5c5;
+  color: #3d8e91;
 }
+
 .token.atrule,
 .token.class-name {
   color: #fac863;
 }
+
 .token.important {
   font-weight: 400;
 }
+
 .token.bold {
   font-weight: 700;
 }
+
 .token.italic {
   font-style: italic;
 }
+
 .token.entity {
   cursor: help;
 }
+
 .namespace {
   opacity: 0.7;
 }
+
 html {
   font-family: sans-serif; /* 1 */
   line-height: 1.15; /* 2 */
