@@ -28,7 +28,7 @@ const PostTemplate = (props) => {
     const html = body.childMarkdownRemark.html.replace(/\n/g, "<br />");
     // console.log(html.replace(/\n/g, "<br />"));
     console.log(ReactHtmlParser(html))
-    return <div className="blog-post-body">{ ReactHtmlParser(html) }</div>
+    return <div className="blog-post-body" >{ ReactHtmlParser(html) }</div>
   }
 
   return (

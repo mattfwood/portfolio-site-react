@@ -161,6 +161,12 @@
 // //   }
 // // }
 
+.blog-post-body {
+  p {
+    margin: 0;
+  }
+}
+
 .gatsby-highlight {
   background: #282c34;
   color: #ffffff;
