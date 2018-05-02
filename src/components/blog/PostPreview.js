@@ -28,7 +28,10 @@ const PostPreview = ({ post }) => (
       <Link to={`/posts/${post.id}`}>
         <div className="post-title-wrapper" style={{ background: `url(${post.image.resolutions.src})` }}>
           <div className="post-preview-overlay">
-            <h4 className="post-preview-title">{post.title}</h4>
+            <div className="post-text-wrapper">
+              <h4 className="post-preview-title">{post.title}</h4>
+              <div className="post-preview-subhead">{post.subhead}</div>
+            </div>
             <div className="post-preview-date">
               <Moment format="MM-DD-YYYY">{post.createdAt}</Moment>
             </div>
