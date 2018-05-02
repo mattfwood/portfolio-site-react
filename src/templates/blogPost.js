@@ -4,6 +4,8 @@ import * as PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Moment from 'react-moment';
 import Link from 'gatsby-link';
+import { MarkdownPreview } from 'react-marked-markdown';
+import ReactHtmlParser from 'react-html-parser';
 
 import Header from '../components/Header';
 import ArrowLeft from '../layouts/icons/arrow-left.svg';
@@ -18,20 +20,17 @@ const propTypes = {
 
 const PostTemplate = (props) => {
   const post = props.data.contentfulPost;
-  // console.log(post);
+  console.log(post);
   const { title, body, subhead, createdAt } = post;
   const imageURL = post.image.resolutions.src;
-  console.log(props.data.allMarkdownRemark.edges);
-  const { id } = props.pathContext;
-  console.log(props);
-  const markdownPosts = props.data.allMarkdownRemark.edges;
-  console.log(
-    remark()
-      .use(reactRenderer)
-      .processSync(body.body).contents,
-  );
-  const markdownBody = markdownPosts.find(markdownPost => markdownPost.node.id.split('bodyTextNode')[0] === id).node.html;
-  console.log(markdownBody);
+
+  const PostBody = () => {
+    const html = body.childMarkdownRemark.html.replace(/\n/g, "<br />");
+    // console.log(html.replace(/\n/g, "<br />"));
+    console.log(ReactHtmlParser(html))
+    return <div className="blog-post-body">{ ReactHtmlParser(html) }</div>
+  }
+
   return (
     <div>
       <Header menu={false} headerOpaque />
@@ -60,7 +59,7 @@ const PostTemplate = (props) => {
                   </h5>
                 </div>
                 <hr />
-                <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: markdownBody }} />
+                <PostBody />
               </div>
             </Col>
           </Row>
@@ -90,14 +89,8 @@ export const pageQuery = graphql`
       body {
         id
         body
-      }
-    }
-
-    allMarkdownRemark {
-      edges {
-        node {
+        childMarkdownRemark {
           html
-          id
         }
       }
     }
