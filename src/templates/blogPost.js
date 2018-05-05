@@ -10,10 +10,6 @@ import ReactHtmlParser from 'react-html-parser';
 import Header from '../components/Header';
 import ArrowLeft from '../layouts/icons/arrow-left.svg';
 
-const remark = require('remark');
-const reactRenderer = require('remark-react');
-const sanitize = require('sanitize-html');
-
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 };
@@ -28,8 +24,8 @@ const PostTemplate = (props) => {
     const html = body.childMarkdownRemark.html.replace(/\n/g, "<br />");
     // console.log(html.replace(/\n/g, "<br />"));
     console.log(ReactHtmlParser(html))
-    return <div className="blog-post-body" >{ ReactHtmlParser(html) }</div>
-  }
+    return <div className="blog-post-body" >{ReactHtmlParser(html)}</div>
+  };
 
   return (
     <div>
