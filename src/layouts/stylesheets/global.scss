@@ -386,9 +386,21 @@ ul {
 	padding-right: 0;
 	padding-top: 0;
 	margin-bottom: 1.45rem;
-	list-style-position: outside;
+	list-style-position: inside;
 	list-style-image: none;
 }
+
+// ul {
+//   list-style-type: none;
+// }
+// ul > li {
+// 	text-indent: -5px;
+// }
+// ul > li:before {
+//   content: "-";
+// 	text-indent: -5px;
+// 	padding-right: 5px;
+// }
 
 ol {
 	margin-left: 1.45rem;
@@ -399,7 +411,7 @@ ol {
 	padding-right: 0;
 	padding-top: 0;
 	margin-bottom: 1.45rem;
-	list-style-position: outside;
+	list-style-position: inside;
 	list-style-image: none;
 }
 
@@ -718,7 +730,7 @@ pre tt:after {
 
 .page-content {
 	margin: 0 auto;
-	margin-top: 100px;
+	// margin-top: 100px;
 }
 
 div[role=button]:hover {
@@ -732,4 +744,8 @@ ul li {
 
 ul {
 	margin: 0;
+}
+
+.no-margins {
+	margin: 0 !important;
 }

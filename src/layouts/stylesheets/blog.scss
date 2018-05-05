@@ -12,9 +12,28 @@
     padding-top: 20px;
   }
 
+  .post-preview-subhead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    padding: 10px;
+    text-decoration: none !important;
+    font-size: 16px;
+    color: #fff;
+    transition: all 300ms ease;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    transform: perspective(400px) rotateX(-180deg);
+    border: 3px solid #fff;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   .post-title-wrapper {
-    // margin: 20px;
-    // position: absolute;
     height: 225px;
     top: 0;
     left: 0;
@@ -25,6 +44,17 @@
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    opacity: 1;
+
+    &:hover {
+      .post-preview-title {
+        transform: perspective(400px) rotateX(180deg);
+      }
+
+      .post-preview-subhead {
+        transform: perspective(400px) rotateX(0deg);
+      }
+    }
   }
 
   .post-preview-overlay {
@@ -34,7 +64,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .post-text-wrapper {
+    position: relative;
   }
 
   .post-preview-title {
@@ -42,9 +76,12 @@
     margin: 20px;
     padding: 10px;
     font-size: 26px;
-    color: #FFF;
+    color: #fff;
     border: 3px solid #fff;
     text-transform: uppercase;
+    transition: all 300ms ease;
+    backface-visibility: hidden;
+    transform: perspective(400px) rotateX(0deg);
 
     @media only screen and (max-width: 768px) {
       font-size: 20px;
@@ -55,7 +92,7 @@
     position: absolute;
     bottom: 30px;
     font-size: 12px;
-    color: #FFF !important;
+    color: #fff !important;
   }
 }
 
@@ -178,19 +215,20 @@
 
 .blog-post-container {
   padding-top: 10px;
+  margin-top: 5.25rem;
 }
 
 .blog-post-wrapper a {
-	background-color: rgba(21,101,192,0.3);
-	border-bottom: 1px solid rgba(0,0,0,0.2);
-	text-decoration: none;
-	text-decoration-line: none;
-	text-decoration-style: initial;
-	text-decoration-color: initial;
-  color: rgba(0,0,0,.8);
+  background-color: rgba(21, 101, 192, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  color: rgba(0, 0, 0, 0.8);
   transition: all 200ms ease;
 
   &:hover {
-    background-color: rgba(21,101,192,0.5);
+    background-color: rgba(21, 101, 192, 0.5);
   }
 }

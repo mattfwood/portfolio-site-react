@@ -16,16 +16,14 @@ const propTypes = {
 
 const PostTemplate = (props) => {
   const post = props.data.contentfulPost;
-  console.log(post);
+  // console.log(post);
   const { title, body, subhead, createdAt } = post;
   const imageURL = post.image.resolutions.src;
 
   const PostBody = () => {
-    const html = body.childMarkdownRemark.html.replace(/\n/g, "<br />");
-    // console.log(html.replace(/\n/g, "<br />"));
-    console.log(ReactHtmlParser(html))
-    return <div className="blog-post-body" >{ReactHtmlParser(html)}</div>
-  };
+    const html = body.childMarkdownRemark.html;
+    return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
+  }
 
   return (
     <div>

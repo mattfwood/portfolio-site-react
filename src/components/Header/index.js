@@ -36,6 +36,12 @@ class Header extends Component {
     this.setState({
       scrollHeight: window.scrollY,
     });
+
+    const removeAnimal = (zoo, animal) => {
+      const animalIndex = zoo.findIndex(item => item.includes(animal));
+      zoo.splice(animalIndex, 1);
+      return zoo;
+    }
   };
 
   handleResize = () => {
@@ -146,7 +152,7 @@ class Header extends Component {
               Projects
             </div>
             <div
-              className="nav-item mobile-nav-4"
+              className="nav-item mobile-nav-3"
               role="button"
               tabIndex={0}
               onClick={() => this.mobileMenuSelect('blog-section')}
@@ -154,7 +160,7 @@ class Header extends Component {
               Blog
             </div>
             <div
-              className="nav-item mobile-nav-3"
+              className="nav-item mobile-nav-4"
               role="button"
               tabIndex={0}
               onClick={() => this.mobileMenuSelect('contact-section')}
