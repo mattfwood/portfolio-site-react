@@ -77,6 +77,17 @@
   }
 }
 
+.card-header {
+  background-color: #e7e6e6;
+  padding: 10px 20px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  h4 {
+    margin: 0;
+  }
+}
+
 .source-icon {
   width: 40px;
 
