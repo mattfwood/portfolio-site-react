@@ -57,7 +57,6 @@ class IndexPage extends Component {
             <ProjectContainer />
             <BlogSection posts={posts} />
             <ContactSection />
-            {/* <Link to="/websocket-demo/">View Websocket Demo</Link> */}
           </Grid>
         </div>
         <Footer />
