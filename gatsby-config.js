@@ -8,7 +8,7 @@ module.exports = {
       options: {
         spaceId: 'wetfygr1eqh0',
         accessToken:
-          '60cbad148b9e4801a76825865de8ec2a7f7f33582aff8c1033814675300e2f25',
+          process.env.CONTENTFUL_TOKEN,
       },
     },
     'gatsby-plugin-react-helmet',
