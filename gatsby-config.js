@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: '.env',
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Matt Wood | Developer',
@@ -7,12 +11,12 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'wetfygr1eqh0',
-        accessToken:
-          process.env.CONTENTFUL_TOKEN,
+        accessToken: process.env.CONTENTFUL_TOKEN,
       },
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -40,6 +44,16 @@ module.exports = {
               // the language "sh" which will highlight using the
               // bash highlighter.
               aliases: {},
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+              backgroundColor: '#000',
             },
           },
         ],
