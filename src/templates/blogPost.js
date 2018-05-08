@@ -1,11 +1,8 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import Moment from 'react-moment';
 import Link from 'gatsby-link';
-import { MarkdownPreview } from 'react-marked-markdown';
-import ReactHtmlParser from 'react-html-parser';
 
 import Header from '../components/Header';
 import ArrowLeft from '../layouts/icons/arrow-left.svg';
@@ -23,7 +20,7 @@ const PostTemplate = (props) => {
   const PostBody = () => {
     const html = body.childMarkdownRemark.html;
     return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
-  }
+  };
 
   return (
     <div>
