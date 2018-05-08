@@ -8,24 +8,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-favicon',
-      options: {
-        logo: './src/favicon.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'wetfygr1eqh0',
@@ -82,8 +64,26 @@ module.exports = {
       options: {
         fonts: [
           // 'raleway',
-          'source sans pro\:300,400,400i,500,700', // you can also specify font weights and styles
+          'source sans pro:300,400,400i,500,700', // you can also specify font weights and styles
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './src/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false,
+        },
       },
     },
   ],
