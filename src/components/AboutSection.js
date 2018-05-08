@@ -54,30 +54,20 @@ const AboutSection = () => (
         <Col xs={12} md={6} lg={4}>
           <div className="skill-group project-card">
             <div className="card-header">
-              <h4>CMS</h4>
+              <h4>Cloud and CMS</h4>
             </div>
             <div className="project-body">
-              <div>Wordpress, Contentful</div>
+              <div>Wordpress, Contentful, Firebase</div>
             </div>
           </div>
         </Col>
         <Col xs={12} md={6} lg={4}>
           <div className="skill-group project-card">
             <div className="card-header">
-              <h4>Apps</h4>
+              <h4>Native</h4>
             </div>
             <div className="project-body">
               <div>React Native, Electron</div>
-            </div>
-          </div>
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <div className="skill-group project-card">
-            <div className="card-header">
-              <h4>Cloud</h4>
-            </div>
-            <div className="project-body">
-              <div>Firebase</div>
             </div>
           </div>
         </Col>
