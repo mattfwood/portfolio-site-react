@@ -38,7 +38,7 @@ class IndexPage extends Component {
 
   render() {
     const posts = this.props.data.allContentfulPost.edges;
-    console.log(posts);
+    // console.log(posts);
     return (
       <div>
         <Header scrollToSection={this.scrollToSection} menu />
