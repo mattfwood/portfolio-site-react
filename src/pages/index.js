@@ -22,7 +22,7 @@ class IndexPage extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ heroAnimation: true });
-    }, 800);
+    }, 500);
   }
 
   scrollToSection = (clickedSection) => {

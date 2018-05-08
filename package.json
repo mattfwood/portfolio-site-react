@@ -11,6 +11,7 @@
     "dotenv": "^5.0.1",
     "gatsby": "^1.9.223",
     "gatsby-link": "^1.6.38",
+    "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.6",
     "gatsby-plugin-sass": "^1.0.20",
     "gatsby-plugin-sharp": "^1.6.44",

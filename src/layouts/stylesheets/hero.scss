@@ -6,10 +6,24 @@
   transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 
   .hero-headline {
-    font-size: 2.5rem;
-    line-height: 1.5;
-    text-align: center;
+    font-size: 3rem;
+    line-height: 3.25rem;
+    // line-height: 1.5;
+    text-align: left;
     padding: 0 1rem;
+    margin-top: 50px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    // text-transform: uppercase;
+    transition: all 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    .hero-subhead {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 1rem 0;
+    }
   }
 
   .row {
@@ -39,6 +53,11 @@
 
 .Hero.active {
   background-color: rgb(21, 101, 192);
+
+  .hero-headline {
+    margin-top: 0;
+    opacity: 1;
+  }
 }
 
 // .Hero.active {

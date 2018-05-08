@@ -4,11 +4,14 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Hero = props => (
   <div className={`Hero ${props.animation ? 'active' : ''}`}>
-    <Row middle="xs" className="no-margins">
+    <Row bottom="xs" className="no-margins">
       <Col xs={12}>
         <div className="hero-headline">
-          I am a Web Developer specializing in React, Node and Single-Page
-          Applications
+          {/* <div>I am a Web Developer</div> */}
+          {/* <div>specializing in React, Node and Single-Page Applications</div> */}
+          {/* <div>Matt Wood</div> */}
+          <div>Full-Stack Web Developer</div>
+          <div className="hero-subhead">Specializing in React, NodeJS and Python</div>
         </div>
       </Col>
     </Row>
