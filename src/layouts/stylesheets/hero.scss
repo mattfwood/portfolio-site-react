@@ -23,16 +23,20 @@
       line-height: 3.25rem;
     }
 
-    .hero-inline-yellow {
-      color: #f6dd3b;
+    .hero-inline-green {
+      color: #79B265;
     }
 
     .hero-inline-light-blue {
       color: #61dafb;
     }
 
+    .hero-inline-yellow {
+      color: #FED44A;
+    }
+
     .hero-inline-red {
-      color: #fc929e;
+      // color: #fc929e;
     }
 
     .hero-subhead {
@@ -68,8 +72,8 @@
       line-height: 1.5rem;
 
       @media only screen and (max-width: 768px) {
-        font-size: 0.5rem;
-        line-height: 1rem;
+        font-size: 1rem;
+        line-height: 1.25rem;
       }
     }
   }
