@@ -2,12 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/styles/prism';
-import { irBlack } from 'react-syntax-highlighter/styles/hljs';
+import Typist from 'react-typist';
 
 const codeString = "import { About, Skills, BlogPosts } from 'matt-wood';";
-
 
 const Hero = props => (
   <div className={`Hero ${props.animation ? 'active' : ''}`}>
@@ -15,9 +12,9 @@ const Hero = props => (
       {/* <Col xs={12}> */}
       <div className="hero-headline">
         <div className="code-section">
-          <SyntaxHighlighter language="javascript">
+          <Typist>
             {codeString}
-          </SyntaxHighlighter>
+          </Typist>
         </div>
         <div>Full-Stack Web Developer</div>
         <div className="hero-subhead">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
-import LanguageBadge from './LanguageBadge';
 
 const AboutSection = () => (
   <div className="about-section">
@@ -31,7 +30,7 @@ const AboutSection = () => (
     <h3>Skills</h3>
     <div className="about-skills">
       <Row>
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={6}>
           <div className="skill-group project-card">
             <div className="card-header">
               <h4>Front-end</h4>
@@ -41,7 +40,7 @@ const AboutSection = () => (
             </div>
           </div>
         </Col>
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={6}>
           <div className="skill-group project-card">
             <div className="card-header">
               <h4>Back-end</h4>
@@ -51,7 +50,7 @@ const AboutSection = () => (
             </div>
           </div>
         </Col>
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={6}>
           <div className="skill-group project-card">
             <div className="card-header">
               <h4>Cloud and CMS</h4>
@@ -61,7 +60,7 @@ const AboutSection = () => (
             </div>
           </div>
         </Col>
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={6}>
           <div className="skill-group project-card">
             <div className="card-header">
               <h4>Native</h4>

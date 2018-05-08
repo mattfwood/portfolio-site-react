@@ -28,6 +28,7 @@
     "react-marked-markdown": "^1.4.6",
     "react-moment": "^0.7.0",
     "react-syntax-highlighter": "^7.0.4",
+    "react-typist": "^2.0.4",
     "remark": "^9.0.0",
     "remark-react": "^4.0.3",
     "sanitize-html": "^1.18.2",
