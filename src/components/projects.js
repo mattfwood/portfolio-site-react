@@ -3,7 +3,7 @@ export default [
     svn_url: 'https://github.com/mattfwood/meal-prep-sunday',
     demoLink: 'https://mealprepsunday-186517.firebaseapp.com',
     language: ['JavaScript', 'React'],
-    name: 'Meal Prep Sunday',
+    name: 'meal-prep-sunday',
     description:
       'Meal planning app that groups your groceries by aisle and lets you have saved recipes to make into shopping lists',
     highlights: [
@@ -16,7 +16,7 @@ export default [
     svn_url: 'https://github.com/mattfwood/portfolio-site-react',
     demoLink: 'https://quizzical-panini-aaeea0.netlify.com',
     language: ['JavaScript', 'React', 'Gatsby', 'GraphQL'],
-    name: 'Portfolio Site',
+    name: 'portfolio-site',
     description:
       "The site you're currently on, built with Gatsby JS and GraphQL for blog content",
     highlights: [

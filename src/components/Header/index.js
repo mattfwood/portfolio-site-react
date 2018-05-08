@@ -41,7 +41,7 @@ class Header extends Component {
       const animalIndex = zoo.findIndex(item => item.includes(animal));
       zoo.splice(animalIndex, 1);
       return zoo;
-    }
+    };
   };
 
   handleResize = () => {
@@ -57,7 +57,7 @@ class Header extends Component {
     });
   };
 
-  mobileMenuSelect = section => {
+  mobileMenuSelect = (section) => {
     // close mobile menu on select
     this.toggleMobileMenu();
     // scroll to section
@@ -69,6 +69,7 @@ class Header extends Component {
     const { scrollToSection } = this.props;
 
     const nav = () => {
+      // show desktop nav above 768px
       if (this.state.windowWidth > 768) {
         return (
           <Col>
@@ -118,9 +119,7 @@ class Header extends Component {
         );
       }
 
-      const mobileMenuVisible = this.state.mobileMenuOpen
-        ? 'active'
-        : 'inactive';
+      const mobileMenuVisible = this.state.mobileMenuOpen ? 'active' : 'inactive';
 
       return (
         <div className="mobile-menu-wrapper">
@@ -135,6 +134,23 @@ class Header extends Component {
             <div className="menu-line hb-bottom" />
           </div>
           <div className={`mobile-menu-dropdown ${mobileMenuVisible}`}>
+            <div
+              className="mobile-menu-close-icon"
+              role="button"
+              onClick={this.toggleMobileMenu}
+              tabIndex={0}
+            >
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 191.414 191.414"
+                enableBackground="new 0 0 191.414 191.414"
+              >
+                <g>
+                  <path d="M107.888,96.142l80.916-80.916c3.48-3.48,3.48-8.701,0-12.181s-8.701-3.48-12.181,0L95.707,83.961L14.791,3.045   c-3.48-3.48-8.701-3.48-12.181,0s-3.48,8.701,0,12.181l80.915,80.916L2.61,177.057c-3.48,3.48-3.48,8.701,0,12.181   c1.74,1.74,5.22,1.74,6.96,1.74s5.22,0,5.22-1.74l80.916-80.916l80.916,80.916c1.74,1.74,5.22,1.74,6.96,1.74   c1.74,0,5.22,0,5.22-1.74c3.48-3.48,3.48-8.701,0-12.181L107.888,96.142z" />
+                </g>
+              </svg>
+            </div>
             <div
               className="nav-item mobile-nav-1"
               role="button"
@@ -168,9 +184,7 @@ class Header extends Component {
               Contact
             </div>
             <div className="nav-item bottom-link">
-              <a href="https://github.com/mattfwood/portfolio-site-react">
-                View Source Code
-              </a>
+              <a href="https://github.com/mattfwood/portfolio-site-react">View Source Code</a>
             </div>
           </div>
         </div>
@@ -185,9 +199,7 @@ class Header extends Component {
           background: '#1565c0',
           marginBottom: '1.45rem',
         }}
-        className={`header ${
-          scrollHeight === 0 ? 'transparent' : ''
-        } ${headerOpaque}`}
+        className={`header ${scrollHeight === 0 ? 'transparent' : ''} ${headerOpaque}`}
       >
         <Grid>
           <Row middle="xs" between="xs" style={{ width: '100%' }}>

@@ -24,7 +24,7 @@
     }
 
     .hero-inline-green {
-      color: #79B265;
+      color: #79b265;
     }
 
     .hero-inline-light-blue {
@@ -32,7 +32,7 @@
     }
 
     .hero-inline-yellow {
-      color: #FED44A;
+      color: #fed44a;
     }
 
     .hero-inline-red {
@@ -47,9 +47,8 @@
   }
 
   .code-section {
-    font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
-      'Liberation Mono', Menlo, Courier, monospace;
-    // padding: 0 1rem;
+    font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
+    margin-bottom: 20px;
 
     > pre {
       background: transparent !important;

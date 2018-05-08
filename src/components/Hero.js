@@ -8,8 +8,8 @@ const codeString = "import { About, Skills, BlogPosts } from 'matt-wood';";
 
 class Hero extends Component {
   state = {
-    windowWidth: 1080,
-  }
+    windowWidth: 0,
+  };
 
   componentDidMount() {
     this.setState({ windowWidth: window.innerWidth });
@@ -20,7 +20,7 @@ class Hero extends Component {
     const { animation } = this.props;
     const code = () => {
       // on mobile, break code into multiple lines
-      if (windowWidth < 768) {
+      if (windowWidth < 768 && windowWidth !== 0) {
         return (
           <Typist>
             import {'{'}
@@ -40,7 +40,11 @@ class Hero extends Component {
         );
       }
 
-      return <Typist>{codeString}</Typist>;
+      if (windowWidth !== 0) {
+        return <Typist>{codeString}</Typist>;
+      }
+
+      return null;
     };
 
     return (

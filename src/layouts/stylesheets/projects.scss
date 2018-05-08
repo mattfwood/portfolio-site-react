@@ -11,6 +11,11 @@
 .project-wrapper {
   text-decoration: none !important;
   color: initial !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-title {
@@ -171,5 +176,25 @@
 
   + .language-badge {
     margin-left: 10px;
+  }
+}
+
+.project-image-wrapper {
+  margin-top: 25px;
+  border-radius: 20px;
+  // max-height: 400px;
+  width: 100%;
+  // max-height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    // width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+    // max-width: 100%;
   }
 }

@@ -22,6 +22,8 @@ const PostTemplate = (props) => {
     return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
   };
 
+  console.log(props);
+
   return (
     <div>
       <Header menu={false} headerOpaque />
