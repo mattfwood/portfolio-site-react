@@ -31,7 +31,7 @@ const AboutSection = () => (
     <div className="about-skills">
       <Row>
         <Col xs={12} md={6}>
-          <div className="skill-group project-card">
+          <div className="skill-group project-card frontend">
             <div className="card-header">
               <h4>Front-end</h4>
             </div>
@@ -41,7 +41,7 @@ const AboutSection = () => (
           </div>
         </Col>
         <Col xs={12} md={6}>
-          <div className="skill-group project-card">
+          <div className="skill-group project-card backend">
             <div className="card-header">
               <h4>Back-end</h4>
             </div>
@@ -51,7 +51,7 @@ const AboutSection = () => (
           </div>
         </Col>
         <Col xs={12} md={6}>
-          <div className="skill-group project-card">
+          <div className="skill-group project-card cloud-other">
             <div className="card-header">
               <h4>Cloud and CMS</h4>
             </div>
@@ -61,7 +61,7 @@ const AboutSection = () => (
           </div>
         </Col>
         <Col xs={12} md={6}>
-          <div className="skill-group project-card">
+          <div className="skill-group project-card native">
             <div className="card-header">
               <h4>Native</h4>
             </div>
