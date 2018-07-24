@@ -1,7 +1,7 @@
 .Hero {
   height: 100vh;
   color: #fff;
-  background-color: rgb(21, 101, 192);
+  background-color: #233142;
   // background-color: #FFF;
   transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -103,7 +103,7 @@
 }
 
 .Hero.active {
-  background-color: rgb(21, 101, 192);
+  background-color: #233142;
 
   .hero-headline {
     margin-top: 0;

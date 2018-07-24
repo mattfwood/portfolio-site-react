@@ -57,7 +57,7 @@ class Header extends Component {
     });
   };
 
-  mobileMenuSelect = (section) => {
+  mobileMenuSelect = section => {
     // close mobile menu on select
     this.toggleMobileMenu();
     // scroll to section
@@ -119,7 +119,9 @@ class Header extends Component {
         );
       }
 
-      const mobileMenuVisible = this.state.mobileMenuOpen ? 'active' : 'inactive';
+      const mobileMenuVisible = this.state.mobileMenuOpen
+        ? 'active'
+        : 'inactive';
 
       return (
         <div className="mobile-menu-wrapper">
@@ -184,7 +186,9 @@ class Header extends Component {
               Contact
             </div>
             <div className="nav-item bottom-link">
-              <a href="https://github.com/mattfwood/portfolio-site-react">View Source Code</a>
+              <a href="https://github.com/mattfwood/portfolio-site-react">
+                View Source Code
+              </a>
             </div>
           </div>
         </div>
@@ -196,10 +200,12 @@ class Header extends Component {
     return (
       <div
         style={{
-          background: '#1565c0',
+          background: '#233142',
           marginBottom: '1.45rem',
         }}
-        className={`header ${scrollHeight === 0 ? 'transparent' : ''} ${headerOpaque}`}
+        className={`header ${
+          scrollHeight === 0 ? 'transparent' : ''
+        } ${headerOpaque}`}
       >
         <Grid>
           <Row middle="xs" between="xs" style={{ width: '100%' }}>
