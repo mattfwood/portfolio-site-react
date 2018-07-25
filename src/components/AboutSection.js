@@ -27,7 +27,7 @@ const AboutSection = () => (
         writing clean, maintainable code that’s thoroughly tested.
       </p>
     </div>
-    <h3>Skills</h3>
+    <h2 className="section-header">Skills</h2>
     <div className="about-skills">
       <Row>
         <Col xs={12} md={6}>

@@ -34,30 +34,30 @@
     }
 
     &.frontend {
-      border-left: 4px solid rgb(43, 163, 216);
+      border-bottom: 4px solid #f07b3f;
       h4 {
-        color: rgb(43, 163, 216);
+        color: #f07b3f;
       }
     }
 
     &.backend {
-      border-left: 4px solid rgb(43, 165, 162);
+      border-bottom: 4px solid #2d4059;
       h4 {
-        color: rgb(43, 165, 162);
+        color: #2d4059;
       }
     }
 
     &.cloud-other {
-      border-left: 4px solid rgb(255, 159, 73);
+      border-bottom: 4px solid #ea5455;
       h4 {
-        color: rgb(255, 159, 73);
+        color: #ea5455;
       }
     }
 
     &.native {
-      border-left: 4px solid rgb(184, 147, 245);
+      border-bottom: 4px solid #facf5a;
       h4 {
-        color: rgb(184, 147, 245);
+        color: #facf5a;
       }
     }
   }
