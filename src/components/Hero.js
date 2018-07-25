@@ -23,7 +23,7 @@ class Hero extends Component {
       if (windowWidth < 768 && windowWidth !== 0) {
         return (
           <Typist>
-            import {'{'}
+            <span style={{ color: '#f95959' }}>import</span> {'{'}
             <Typist.Delay ms={200} />
             <br />
             {'  '}About,
