@@ -34,28 +34,28 @@
     }
 
     &.frontend {
-      border-bottom: 4px solid #f07b3f;
+      border-top: 4px solid #f07b3f;
       h4 {
         color: #f07b3f;
       }
     }
 
     &.backend {
-      border-bottom: 4px solid #2d4059;
+      border-top: 4px solid #2d4059;
       h4 {
         color: #2d4059;
       }
     }
 
     &.cloud-other {
-      border-bottom: 4px solid #ea5455;
+      border-top: 4px solid #ea5455;
       h4 {
         color: #ea5455;
       }
     }
 
     &.native {
-      border-bottom: 4px solid #facf5a;
+      border-top: 4px solid #facf5a;
       h4 {
         color: #facf5a;
       }
