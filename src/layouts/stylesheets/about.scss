@@ -5,12 +5,60 @@
   // justify-content: space-between;
 }
 
-.skill-group {
-  // width: 50%;
-  // flex-basis: 45%;
-  margin: 1rem 0;
+.about-skills {
+  .skill-group {
+    // width: 50%;
+    // flex-basis: 45%;
+    margin: 1rem 0;
+    padding: 20px;
 
-  + .skill-group {
-    // margin-top: 1rem;
+    .card-header {
+      background-color: transparent;
+      padding: 0;
+      margin-bottom: 10px;
+
+      h4 {
+        font-size: 22px;
+        font-weight: 500;
+      }
+    }
+
+    .project-body {
+      padding: 0;
+      font-size: 18px;
+      color: #72797a;
+    }
+
+    + .skill-group {
+      // margin-top: 1rem;
+    }
+
+    &.frontend {
+      border-left: 4px solid rgb(43, 163, 216);
+      h4 {
+        color: rgb(43, 163, 216);
+      }
+    }
+
+    &.backend {
+      border-left: 4px solid rgb(43, 165, 162);
+      h4 {
+        color: rgb(43, 165, 162);
+      }
+    }
+
+    &.cloud-other {
+      border-left: 4px solid rgb(255, 159, 73);
+      h4 {
+        color: rgb(255, 159, 73);
+      }
+    }
+
+    &.native {
+      border-left: 4px solid rgb(184, 147, 245);
+      h4 {
+        color: rgb(184, 147, 245);
+      }
+    }
   }
 }
