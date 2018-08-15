@@ -1,6 +1,13 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 
+const zoo = ['🦓', '🦖', '🐀'];
+// find index of animal to remove
+const ratIndex = zoo.findIndex((item) => item.includes('🐀'));
+// remove item from array
+zoo.splice(ratIndex, 1);
+console.log(zoo) // => returns ['🦓', '🦖']
+
 const AboutSection = () => (
   <div className="about-section">
     <h2 className="section-header">

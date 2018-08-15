@@ -19,6 +19,7 @@ const PostTemplate = (props) => {
 
   const PostBody = () => {
     const html = body.childMarkdownRemark.html;
+    console.log(html);
     return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
   };
 

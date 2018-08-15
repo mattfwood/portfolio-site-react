@@ -3,7 +3,6 @@
 // //  * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
 // //  * @author Joe Gibson (@gibsjose)
 // //  */
-
 // code[class*="language-"],
 // pre[class*="language-"] {
 //   // color: #c5c8c6;
@@ -16,17 +15,14 @@
 // 	word-spacing: normal;
 // 	word-break: normal;
 // 	line-height: 1.5;
-
 // 	-moz-tab-size: 4;
 // 	-o-tab-size: 4;
 // 	tab-size: 4;
-
 // 	-webkit-hyphens: none;
 // 	-moz-hyphens: none;
 // 	-ms-hyphens: none;
 // 	hyphens: none;
 // }
-
 // /* Code blocks */
 // pre[class*="language-"] {
 // 	padding: 1em;
@@ -34,58 +30,47 @@
 // 	overflow: auto;
 // 	border-radius: 0.3em;
 // }
-
 // :not(pre) > code[class*="language-"],
 // pre[class*="language-"] {
 // 	background: #1d1f21;
 // }
-
 // /* Inline code */
 // :not(pre) > code[class*="language-"] {
 // 	padding: .1em;
 // 	border-radius: .3em;
 // }
-
 // .token.comment,
 // .token.prolog,
 // .token.doctype,
 // .token.cdata {
 // 	color: #7C7C7C;
 // }
-
 // .token.punctuation {
 // 	color: #c5c8c6;
 // }
-
 // .namespace {
 // 	opacity: .7;
 // }
-
 // .token.property,
 // .token.keyword,
 // .token.tag {
 //     color: #3498db;
 // }
-
 // .token.class-name {
-// 	color: #FFFFB6;
+// 	color: #e5c07bFB6;
 // 	text-decoration: underline;
 // }
-
 // .token.boolean,
 // .token.constant {
 //     color: #99CC99;
 // }
-
 // .token.symbol,
 // .token.deleted {
 // 	color: #f92672;
 // }
-
 // .token.number {
 // 	color: #FF73FD;
 // }
-
 // .token.selector,
 // .token.attr-name,
 // .token.string,
@@ -94,47 +79,37 @@
 // .token.inserted {
 // 	color: #A8FF60;
 // }
-
 // .token.variable {
 // 	color: #C6C5FE;
 // }
-
 // .token.operator {
 //     color: #e74c3c;
 // }
-
 // .token.entity {
 //     color: #FFFFB6;
 //     /* text-decoration: underline; */
 // }
-
 // .token.url {
 //     color: #96CBFE;
 // }
-
 // .language-css .token.string,
 // .style .token.string {
 // 	color: #87C38A;
 // }
-
 // .token.atrule,
 // .token.attr-value {
 //     color: #F9EE98;
 // }
-
 // .token.function {
 //   // color: #DAD085;
 //   color: #3498db;
 // }
-
 // .token.regex {
 //     color: #E9C062;
 // }
-
 // .token.important {
 // 	color: #fd971f;
 // }
-
 // .token.important,
 // .token.bold {
 // 	font-weight: bold;
@@ -142,29 +117,23 @@
 // .token.italic {
 // 	font-style: italic;
 // }
-
 // .token.entity {
 // 	cursor: help;
 // }
-
 // // pre {
 // //   background-color: #1a1a1a;
 // // }
-
 // // code.javascript {
 // //   .hljs-keyword {
 // //     color: #3498db;
 // //   }
-
 // //   .hljs-string {
 // //     color: #f1c40f;
 // //   }
 // // }
-
 .gatsby-highlight {
-  background: #282c34;
-  // color: #ffffff;
-  color: #f7b83d;
+  background: #282c34; // color: #ffffff;
+  color: #bbbbbb;
   border-radius: 10px;
   overflow: auto;
   tab-size: 1.5em;
@@ -185,7 +154,7 @@
   overflow: auto;
 }
 
-.gatsby-highlight + .gatsby-highlight {
+.gatsby-highlight+.gatsby-highlight {
   margin-top: 20px;
 }
 
@@ -205,7 +174,7 @@
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999999;
+  color: #5c6370;
 }
 
 .token.property,
@@ -214,11 +183,11 @@
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #f7a21b;
+  color: #c678dd;
 }
 
 .token.boolean {
-  color: #ff8b50;
+  color: #56b6c2;
 }
 
 .token.tag {
@@ -226,12 +195,12 @@
 }
 
 .token.string {
-  color: #FFF;
+  color: #e5c07b;
 }
 
 .token.punctuation {
   // color: #5fb3b3;
-  color: #ecf0f1;
+  color: #bbbbbb;
 }
 
 .token.selector,
@@ -243,7 +212,7 @@
 
 .token.function {
   // color: #79b6f2;
-  color: #f0624b;
+  color: #98c379;
 }
 
 .token.operator,
@@ -251,7 +220,7 @@
 .token.url,
 .token.variable {
   // color: #d7deea;
-  color: #e74c3c;
+  color: #e06c75;
 }
 
 .token.attr-value {
@@ -260,12 +229,12 @@
 
 .token.keyword {
   // color: #c5a5c5;
-  color: #3d8e91;
+  color: #e06c75;
 }
 
 .token.atrule,
 .token.class-name {
-  color: #fac863;
+  color: #61afef;
 }
 
 .token.important {
@@ -289,8 +258,12 @@
 }
 
 html {
-  font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
 }
