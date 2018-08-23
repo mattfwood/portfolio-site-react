@@ -88,3 +88,10 @@ module.exports = {
     },
   ],
 };
+
+
+const removeAnimal = (zoo, animal) => {
+  const animalIndex = zoo.findIndex(item => item.includes(animal));
+  zoo.splice(animalIndex, 1);
+  return zoo;
+}
