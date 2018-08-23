@@ -13,7 +13,7 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'matt, wood, matt wood, developer, portfolio' },
       ]}
     />
-    {children()}
+    {children}
   </div>
 );
 

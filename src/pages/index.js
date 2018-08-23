@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { Grid } from 'react-flexbox-grid';
 
+import Layout from '../layouts/index';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -40,7 +41,7 @@ class IndexPage extends Component {
     const posts = this.props.data.allContentfulPost.edges;
     // console.log(posts);
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Header scrollToSection={this.scrollToSection} menu />
         <Hero animation={this.state.heroAnimation} />
         <div
@@ -60,7 +61,7 @@ class IndexPage extends Component {
           </Grid>
         </div>
         <Footer />
-      </div>
+      </Layout>
     );
   }
 }
