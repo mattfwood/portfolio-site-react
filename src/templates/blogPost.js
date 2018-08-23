@@ -4,6 +4,7 @@ import * as PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import Link from 'gatsby-link';
 
+import Layout from '../layouts/index';
 import Header from '../components/Header';
 import ArrowLeft from '../layouts/icons/arrow-left.svg';
 
@@ -14,19 +15,18 @@ const propTypes = {
 const PostTemplate = (props) => {
   const post = props.data.contentfulPost;
   // console.log(post);
-  const { title, body, subhead, createdAt } = post;
+  const {
+    title, body, subhead, createdAt,
+  } = post;
   const imageURL = post.image.resolutions.src;
 
   const PostBody = () => {
     const html = body.childMarkdownRemark.html;
-    console.log(html);
     return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
   };
 
-  console.log(props);
-
   return (
-    <div>
+    <Layout location={props.location}>
       <Header menu={false} headerOpaque />
       <div className="page-content blog-post-container">
         <Grid>
@@ -59,7 +59,7 @@ const PostTemplate = (props) => {
           </Row>
         </Grid>
       </div>
-    </div>
+    </Layout>
   );
 };
 
