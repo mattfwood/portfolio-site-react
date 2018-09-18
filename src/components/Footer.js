@@ -1,12 +1,11 @@
-import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import GithubIcon from '../layouts/icons/github-icon.svg';
-import LinkedInIcon from '../layouts/icons/linkedin-icon.svg';
-
+import React from 'react'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import GithubIcon from '../layouts/icons/github-icon.svg'
+import LinkedInIcon from '../layouts/icons/linkedin-icon.svg'
 
 const Footer = () => {
-  const date = new Date();
-  const year = date.getFullYear();
+  const date = new Date()
+  const year = date.getFullYear()
   return (
     <div className="Footer">
       <Row>
@@ -24,7 +23,7 @@ const Footer = () => {
         </Col>
       </Row>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

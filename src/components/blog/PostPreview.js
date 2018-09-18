@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import { Col } from 'react-flexbox-grid';
-import * as PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
-import Moment from 'react-moment';
+import React from 'react'
+import Link from 'gatsby-link'
+import { Col } from 'react-flexbox-grid'
+import * as PropTypes from 'prop-types'
+import ReactMarkdown from 'react-markdown'
+import Moment from 'react-moment'
 
 const propTypes = {
   post: PropTypes.shape({
@@ -20,13 +20,16 @@ const propTypes = {
     }).isRequired,
     createdAt: PropTypes.string.isRequired,
   }).isRequired,
-};
+}
 
 const PostPreview = ({ post }) => (
   <Col xs={12} md={6}>
     <div className="post-preview">
       <Link to={`/posts/${post.id}`}>
-        <div className="post-title-wrapper" style={{ background: `url(${post.image.resolutions.src})` }}>
+        <div
+          className="post-title-wrapper"
+          style={{ background: `url(${post.image.resolutions.src})` }}
+        >
           <div className="post-preview-overlay">
             <div className="post-text-wrapper">
               <h4 className="post-preview-title">{post.title}</h4>
@@ -43,8 +46,8 @@ const PostPreview = ({ post }) => (
       </div> */}
     </div>
   </Col>
-);
+)
 
-PostPreview.propTypes = propTypes;
+PostPreview.propTypes = propTypes
 
-export default PostPreview;
+export default PostPreview

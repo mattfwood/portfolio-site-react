@@ -1,46 +1,54 @@
-import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import * as PropTypes from 'prop-types';
-import Moment from 'react-moment';
-import Link from 'gatsby-link';
+import React from 'react'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import * as PropTypes from 'prop-types'
+import Moment from 'react-moment'
+import Link from 'gatsby-link'
 
-import Header from '../components/Header';
-import ArrowLeft from '../layouts/icons/arrow-left.svg';
+import Header from '../components/Header'
+import ArrowLeft from '../layouts/icons/arrow-left.svg'
 
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
-};
+}
 
-const PostTemplate = (props) => {
-  const post = props.data.contentfulPost;
+const PostTemplate = props => {
+  const post = props.data.contentfulPost
   // console.log(post);
-  const { title, body, subhead, createdAt } = post;
-  const imageURL = post.image.resolutions.src;
+  const { title, body, subhead, createdAt } = post
+  const imageURL = post.image.resolutions.src
 
   const PostBody = () => {
-    const html = body.childMarkdownRemark.html;
+    const html = body.childMarkdownRemark.html
     // console.log(html);
-    return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
-  };
+    return (
+      <div
+        className="blog-post-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    )
+  }
 
   // console.log(props);
 
   return (
     <div>
-      <Header menu={false} headerOpaque scrollToSection={() => { }} />
+      <Header menu={false} headerOpaque scrollToSection={() => {}} />
       <div className="page-content blog-post-container">
         <Grid>
           <Row>
             <Link to="/" className="back-arrow-link">
               <div className="back-arrow-row">
-                <img src={ArrowLeft} className="blog-back-arrow" alt="back arrow" />
+                <img
+                  src={ArrowLeft}
+                  className="blog-back-arrow"
+                  alt="back arrow"
+                />
                 <div>Back</div>
               </div>
             </Link>
           </Row>
           <Row>
             <Col xs={12}>
-
               <div className="blog-post-wrapper">
                 <img className="blog-header-image" src={imageURL} alt={title} />
                 <div className="blog-post-heading">
@@ -60,12 +68,12 @@ const PostTemplate = (props) => {
         </Grid>
       </div>
     </div>
-  );
-};
+  )
+}
 
-PostTemplate.propTypes = propTypes;
+PostTemplate.propTypes = propTypes
 
-export default PostTemplate;
+export default PostTemplate
 
 export const pageQuery = graphql`
   query postQuery($id: String!) {
@@ -89,4 +97,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

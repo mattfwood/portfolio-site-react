@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
 
-import Project from './Project';
-import projects from './projects';
+import Project from './Project'
+import projects from './projects'
 
-import mealPrepSunday from '../layouts/images/meal-prep-sunday-demo.gif';
+import mealPrepSunday from '../layouts/images/meal-prep-sunday-demo.gif'
 import portfolioSite from '../layouts/images/portfolio-site-demo.gif'
 
 const gifs = {
   'meal-prep-sunday': mealPrepSunday,
-  'portfolio-site': portfolioSite
-};
+  'portfolio-site': portfolioSite,
+}
 
 class ProjectContainer extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       githubProjects: [],
-    };
+    }
   }
 
   componentWillMount() {
@@ -44,9 +44,11 @@ class ProjectContainer extends Component {
           </span>
           Projects
         </h2>
-        {projects.map((project, index) => <Project gifs={gifs} project={project} key={index} />)}
+        {projects.map((project, index) => (
+          <Project gifs={gifs} project={project} key={index} />
+        ))}
       </div>
-    );
+    )
   }
 }
 
@@ -62,4 +64,4 @@ class ProjectContainer extends Component {
 //   }
 // }`;
 
-export default ProjectContainer;
+export default ProjectContainer

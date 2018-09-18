@@ -1,77 +1,77 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
-import * as PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types'
 
 const propTypes = {
   scrollToSection: PropTypes.func.isRequired,
   menu: PropTypes.bool,
-};
+}
 
 class Header extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       scrollHeight: 0,
       windowWidth: 0,
       mobileMenuOpen: false,
-    };
+    }
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.handleResize);
-    this.setInitialWidth();
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
+    this.setInitialWidth()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll');
-    window.removeEventListener('resize');
+    window.removeEventListener('scroll')
+    window.removeEventListener('resize')
   }
 
   setInitialWidth = () => {
     this.setState({
       windowWidth: window.innerWidth,
-    });
-  };
+    })
+  }
 
   handleScroll = () => {
     this.setState({
       scrollHeight: window.scrollY,
-    });
+    })
 
     const removeAnimal = (zoo, animal) => {
-      const animalIndex = zoo.findIndex(item => item.includes(animal));
-      zoo.splice(animalIndex, 1);
-      return zoo;
-    };
-  };
+      const animalIndex = zoo.findIndex(item => item.includes(animal))
+      zoo.splice(animalIndex, 1)
+      return zoo
+    }
+  }
 
   handleResize = () => {
     this.setState({
       windowWidth: window.innerWidth,
-    });
-  };
+    })
+  }
 
   toggleMobileMenu = () => {
     // console.log('MOBILE MENU TOGGLE');
     this.setState({
       mobileMenuOpen: !this.state.mobileMenuOpen,
-    });
-  };
+    })
+  }
 
   mobileMenuSelect = section => {
     // close mobile menu on select
-    this.toggleMobileMenu();
+    this.toggleMobileMenu()
     // scroll to section
-    this.props.scrollToSection(section);
-  };
+    this.props.scrollToSection(section)
+  }
 
   render() {
-    const { scrollHeight } = this.state;
-    const { scrollToSection } = this.props;
+    const { scrollHeight } = this.state
+    const { scrollToSection } = this.props
 
     const nav = () => {
       // show desktop nav above 768px
@@ -121,12 +121,12 @@ class Header extends Component {
               </Col>
             </Row>
           </Col>
-        );
+        )
       }
 
       const mobileMenuVisible = this.state.mobileMenuOpen
         ? 'active'
-        : 'inactive';
+        : 'inactive'
 
       return (
         <div className="mobile-menu-wrapper">
@@ -197,10 +197,10 @@ class Header extends Component {
             </div>
           </div>
         </div>
-      );
-    };
+      )
+    }
 
-    const headerOpaque = this.props.headerOpaque ? 'header-opaque' : '';
+    const headerOpaque = this.props.headerOpaque ? 'header-opaque' : ''
 
     return (
       <div
@@ -230,14 +230,14 @@ class Header extends Component {
           </Row>
         </Grid>
       </div>
-    );
+    )
   }
 }
 
-Header.propTypes = propTypes;
+Header.propTypes = propTypes
 
 Header.defaultProps = {
   menu: false,
-};
+}
 
-export default Header;
+export default Header
