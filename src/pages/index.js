@@ -10,7 +10,7 @@ import ContactSection from '../components/Contact/ContactSection'
 import ProjectContainer from '../components/ProjectContainer'
 import AboutSection from '../components/AboutSection'
 import BlogSection from '../components/blog/BlogSection'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 const pageQuery = graphql`
   query PageQuery {
