@@ -26,6 +26,11 @@ class Header extends Component {
     this.setInitialWidth();
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll');
+    window.removeEventListener('resize');
+  }
+
   setInitialWidth = () => {
     this.setState({
       windowWidth: window.innerWidth,

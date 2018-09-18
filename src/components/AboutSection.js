@@ -6,7 +6,7 @@ const zoo = ['🦓', '🦖', '🐀'];
 const ratIndex = zoo.findIndex((item) => item.includes('🐀'));
 // remove item from array
 zoo.splice(ratIndex, 1);
-console.log(zoo) // => returns ['🦓', '🦖']
+// console.log(zoo) // => returns ['🦓', '🦖']
 
 const AboutSection = () => (
   <div className="about-section">

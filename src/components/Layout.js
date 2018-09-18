@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import './stylesheets/index.scss';
 
-const TemplateWrapper = ({ children }) => (
+const Layout = ({ children }) => (
   <div>
     <Helmet
       title="Matt Wood | Developer"
@@ -13,12 +13,12 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'matt, wood, matt wood, developer, portfolio' },
       ]}
     />
-    {children()}
+    {children}
   </div>
 );
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func.isRequired,
+Layout.propTypes = {
+  children: PropTypes.object.isRequired,
 };
 
-export default TemplateWrapper;
+export default Layout;

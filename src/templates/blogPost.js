@@ -19,15 +19,15 @@ const PostTemplate = (props) => {
 
   const PostBody = () => {
     const html = body.childMarkdownRemark.html;
-    console.log(html);
+    // console.log(html);
     return <div className="blog-post-body" dangerouslySetInnerHTML={{ __html: html }} />;
   };
 
-  console.log(props);
+  // console.log(props);
 
   return (
     <div>
-      <Header menu={false} headerOpaque />
+      <Header menu={false} headerOpaque scrollToSection={() => { }} />
       <div className="page-content blog-post-container">
         <Grid>
           <Row>
