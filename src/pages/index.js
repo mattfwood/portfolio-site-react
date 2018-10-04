@@ -46,11 +46,20 @@ class IndexPage extends Component {
     setTimeout(() => {
       this.setState({ heroAnimation: true })
     }, 500)
+
+    const { hash } = window.location;
+
+    if (hash) {
+      console.log('HASH FOUND');
+      this.scrollToSection(hash.replace('#', ''));
+    }
   }
 
   scrollToSection = clickedSection => {
     const section = document.querySelector(`#${clickedSection}`)
+    console.log(section);
     const offsetTop = section.offsetTop - 125
+    // const offsetTop = section.offsetTop;
 
     window.scroll({
       top: offsetTop,

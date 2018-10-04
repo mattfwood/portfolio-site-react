@@ -24,14 +24,6 @@ class Header extends Component {
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.handleResize)
     this.setInitialWidth()
-
-    const { hash } = window.location;
-
-    // if there's a hash on load, scroll to that section
-    if (hash) {
-      console.log('HASH FOUND');
-      this.props.scrollToSection(hash.replace('#', ''));
-    }
   }
 
   componentWillUnmount() {

@@ -35,9 +35,9 @@ const PostPreview = ({ post }) => (
               <h4 className="post-preview-title">{post.title}</h4>
               <div className="post-preview-subhead">{post.subhead}</div>
             </div>
-            <div className="post-preview-date">
+            {/* <div className="post-preview-date">
               <Moment format="MM-DD-YYYY">{post.createdAt}</Moment>
-            </div>
+            </div> */}
           </div>
         </div>
       </Link>
