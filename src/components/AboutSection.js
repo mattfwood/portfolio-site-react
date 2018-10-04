@@ -1,18 +1,19 @@
-import React from 'react'
-import { Row, Col } from 'react-flexbox-grid'
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 
-const zoo = ['🦓', '🦖', '🐀']
+const zoo = ['🦓', '🦖', '🐀'];
 // find index of animal to remove
-const ratIndex = zoo.findIndex(item => item.includes('🐀'))
+const ratIndex = zoo.findIndex(item => item.includes('🐀'));
 // remove item from array
-zoo.splice(ratIndex, 1)
+zoo.splice(ratIndex, 1);
 // console.log(zoo) // => returns ['🦓', '🦖']
 
 const AboutSection = () => (
   <div className="about-section" id="about">
     <h2 className="section-header">
       <span role="img" aria-label="person surprised emoji">
-        🙇‍{' '}
+        🙇‍
+        {' '}
       </span>
       About
     </h2>
@@ -22,7 +23,7 @@ const AboutSection = () => (
         specialize in NodeJS, React, and building APIs for applications.
       </p>
       <p>
-        I've created several full-stack web applications and built front-end for
+        I\'ve created several full-stack web applications and built front-end for
         many more web apps. I’ve also developed NPM packages such as a Node CLI
         tools and a React boilerplate generator.
       </p>
@@ -84,6 +85,6 @@ const AboutSection = () => (
       </Row>
     </div>
   </div>
-)
+);
 
-export default AboutSection
+export default AboutSection;

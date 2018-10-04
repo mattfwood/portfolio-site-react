@@ -25,4 +25,4 @@ export default [
       'Uses no CSS framework, with all styles custom-made',
     ],
   },
-]
+];

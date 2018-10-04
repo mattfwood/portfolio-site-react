@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import './stylesheets/index.scss'
+import './stylesheets/index.scss';
 
 const Layout = ({ children }) => (
   <div>
@@ -18,10 +18,10 @@ const Layout = ({ children }) => (
     />
     {children}
   </div>
-)
+);
 
 Layout.propTypes = {
-  children: PropTypes.object.isRequired,
-}
+  children: PropTypes.func.isRequired,
+};
 
-export default Layout
+export default Layout;

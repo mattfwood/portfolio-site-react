@@ -1,40 +1,43 @@
-import React from 'react'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import * as PropTypes from 'prop-types'
-import Moment from 'react-moment'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import * as PropTypes from 'prop-types';
+import Moment from 'react-moment';
+import Helmet from 'react-helmet';
 import { navigate } from 'gatsby';
 
-import Header from '../components/Header'
-import ArrowLeft from '../layouts/icons/arrow-left.svg'
+import Header from '../components/Header';
+// import ArrowLeft from '../layouts/icons/arrow-left.svg';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
-}
+};
 
 class PostTemplate extends React.Component {
-  handleMenuClick = (section) => {;
-    navigate(`/#${section}`)
+  handleMenuClick = (section) => {
+    navigate(`/#${section}`);
   }
 
   render() {
-    const post = this.props.data.contentfulPost
-    // console.log(post);
-    const { title, body, subhead, createdAt } = post
-    const imageURL = post.image.resolutions.src
+    const { contentfulPost } = this.props.data;
+    const {
+      title,
+      body,
+      // subhead,
+      createdAt,
+    } = contentfulPost;
+    const imageURL = contentfulPost.image.resolutions.src;
 
     const PostBody = () => {
-      const html = body.childMarkdownRemark.html
+      const html = body.childMarkdownRemark.html;
       return (
         <div
           className="blog-post-body"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-      )
-    }
+      );
+    };
     return (
       <Layout>
         <Helmet
@@ -48,8 +51,8 @@ class PostTemplate extends React.Component {
           ]}
         />
         <Header
-          menu={true}
-          blogPage={true}
+          menu
+          blogPage
           headerOpaque
           scrollToSection={this.handleMenuClick}
         />
@@ -71,14 +74,17 @@ class PostTemplate extends React.Component {
               <Col xs={12}>
                 <div className="blog-post-wrapper">
                   <h2 className="blog-post-title">{title}</h2>
-                  <img className="blog-header-image" src={imageURL} alt={title} />
+                  <img
+                    className="blog-header-image"
+                    src={imageURL}
+                    alt={title}
+                  />
                   <div className="blog-post-heading">
                     {/* <h4 className="blog-post-subhead">{subhead}</h4> */}
                     <h5 className="blog-post-date">
-                      Published on {' '}
-                      <Moment format="MMM DD, YYYY">
-                        {createdAt}
-                      </Moment>
+                      Published on
+                      {' '}
+                      <Moment format="MMM DD, YYYY">{createdAt}</Moment>
                     </h5>
                   </div>
                   <hr />
@@ -90,13 +96,13 @@ class PostTemplate extends React.Component {
           </Grid>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-PostTemplate.propTypes = propTypes
+PostTemplate.propTypes = propTypes;
 
-export default PostTemplate
+export default PostTemplate;
 
 export const pageQuery = graphql`
   query postQuery($id: String!) {
@@ -120,10 +126,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-const removeAnimal = (zoo, animal) => {
-  const animalIndex = zoo.findIndex(item => item.includes(animal));
-  zoo.splice(animalIndex, 1);
-  return zoo;
-}
+`;

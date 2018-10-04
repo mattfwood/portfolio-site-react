@@ -59,7 +59,7 @@ class Header extends Component {
     // close mobile menu on select
     this.toggleMobileMenu()
     // scroll to section
-    console.log(section);
+    console.log(section)
     this.props.scrollToSection(section)
   }
 

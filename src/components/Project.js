@@ -1,21 +1,21 @@
-import React from 'react'
-import { Row, Col } from 'react-flexbox-grid'
-import * as PropTypes from 'prop-types'
-import LanguageBadge from './LanguageBadge'
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
+import * as PropTypes from 'prop-types';
+import LanguageBadge from './LanguageBadge';
 
-import SourceCodeIcon from '../layouts/icons/source-code-icon.svg'
+import SourceCodeIcon from '../layouts/icons/source-code-icon.svg';
 
 const propTypes = {
   project: PropTypes.objectOf(PropTypes.any).isRequired,
-}
+};
 
 const Project = ({ project, gifs }) => {
-  let languages
+  let languages;
 
   if (!Array.isArray(project.language)) {
-    languages = Array(project.language)
+    languages = Array(project.language);
   } else {
-    languages = project.language
+    languages = project.language;
   }
 
   const highlights = () => {
@@ -23,13 +23,16 @@ const Project = ({ project, gifs }) => {
       return (
         <div className="project-highlights">
           {project.highlights.map((highlight, index) => (
-            <div key={index}>- {highlight}</div>
+            <div key={index}>
+-
+              {highlight}
+            </div>
           ))}
         </div>
-      )
+      );
     }
-    return null
-  }
+    return null;
+  };
 
   return (
     <div className="Project">
@@ -77,9 +80,9 @@ const Project = ({ project, gifs }) => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-Project.propTypes = propTypes
+Project.propTypes = propTypes;
 
-export default Project
+export default Project;

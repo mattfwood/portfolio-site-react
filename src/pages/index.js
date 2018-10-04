@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import * as PropTypes from 'prop-types'
-import { Grid } from 'react-flexbox-grid'
-import { StaticQuery, graphql } from 'gatsby'
+import React, { Component } from 'react';
+import { Grid } from 'react-flexbox-grid';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Hero from '../components/Hero'
-import ContactSection from '../components/Contact/ContactSection'
-import ProjectContainer from '../components/ProjectContainer'
-import AboutSection from '../components/AboutSection'
-import BlogSection from '../components/blog/BlogSection'
-import Layout from '../components/Layout'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Hero from '../components/Hero';
+import ContactSection from '../components/Contact/ContactSection';
+import ProjectContainer from '../components/ProjectContainer';
+import AboutSection from '../components/AboutSection';
+import BlogSection from '../components/blog/BlogSection';
+import Layout from '../components/Layout';
 
 const pageQuery = graphql`
   query PageQuery {
@@ -35,7 +34,7 @@ const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
 class IndexPage extends Component {
   state = {
@@ -44,28 +43,26 @@ class IndexPage extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ heroAnimation: true })
-    }, 500)
+      this.setState({ heroAnimation: true });
+    }, 500);
 
     const { hash } = window.location;
 
     if (hash) {
-      console.log('HASH FOUND');
       this.scrollToSection(hash.replace('#', ''));
     }
   }
 
-  scrollToSection = clickedSection => {
-    const section = document.querySelector(`#${clickedSection}`)
-    console.log(section);
-    const offsetTop = section.offsetTop - 125
+  scrollToSection = (clickedSection) => {
+    const section = document.querySelector(`#${clickedSection}`);
+    const offsetTop = section.offsetTop - 125;
     // const offsetTop = section.offsetTop;
 
     window.scroll({
       top: offsetTop,
       left: 0,
       behavior: 'smooth',
-    })
+    });
   }
 
   render() {
@@ -75,13 +72,13 @@ class IndexPage extends Component {
       <Layout>
         <StaticQuery
           query={pageQuery}
-          render={data => {
-            const posts = data.allContentfulPost.edges
-            // console.log(posts);
+          render={(data) => {
+            const posts = data.allContentfulPost.edges;
+            const { heroAnimation } = this.state;
             return (
               <>
                 <Header scrollToSection={this.scrollToSection} menu />
-                <Hero animation={this.state.heroAnimation} />
+                <Hero animation={heroAnimation} />
                 <div
                   style={{
                     maxWidth: 960,
@@ -99,14 +96,14 @@ class IndexPage extends Component {
                 </div>
                 <Footer />
               </>
-            )
+            );
           }}
         />
       </Layout>
-    )
+    );
   }
 }
 
 // IndexPage.propTypes = propTypes;
 
-export default IndexPage
+export default IndexPage;
