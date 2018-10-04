@@ -1,13 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 
-const zoo = ['🦓', '🦖', '🐀'];
-// find index of animal to remove
-const ratIndex = zoo.findIndex(item => item.includes('🐀'));
-// remove item from array
-zoo.splice(ratIndex, 1);
-// console.log(zoo) // => returns ['🦓', '🦖']
-
 const AboutSection = () => (
   <div className="about-section" id="about">
     <h2 className="section-header">
@@ -39,8 +32,8 @@ const AboutSection = () => (
         tested.
       </p>
     </div>
-    <h2 className="section-header">Skills</h2>
-    <div className="about-skills">
+    {/* <h2 className="section-header">Skills</h2> */}
+    {/* <div className="about-skills">
       <Row>
         <Col xs={12} md={6}>
           <div className="skill-group project-card frontend">
@@ -83,7 +76,7 @@ const AboutSection = () => (
           </div>
         </Col>
       </Row>
-    </div>
+    </div> */}
   </div>
 );
 

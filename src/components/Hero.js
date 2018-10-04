@@ -41,7 +41,7 @@ class Hero extends Component {
             <br />
             {'}'}
             {' '}
-            from \'matt-wood\'
+            from 'matt-wood'
           </Typist>
         );
       }
