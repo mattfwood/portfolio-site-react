@@ -27,8 +27,8 @@ class Header extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll')
-    window.removeEventListener('resize')
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.handleResize)
   }
 
   setInitialWidth = () => {
@@ -155,7 +155,7 @@ class Header extends Component {
               className="nav-item mobile-nav-1"
               role="button"
               tabIndex={0}
-              onClick={() => this.mobileMenuSelect('about-section')}
+              onClick={() => this.mobileMenuSelect('about')}
             >
               About
             </div>
@@ -163,7 +163,7 @@ class Header extends Component {
               className="nav-item mobile-nav-2"
               role="button"
               tabIndex={0}
-              onClick={() => this.mobileMenuSelect('project-section')}
+              onClick={() => this.mobileMenuSelect('project')}
             >
               Projects
             </div>
@@ -171,7 +171,7 @@ class Header extends Component {
               className="nav-item mobile-nav-3"
               role="button"
               tabIndex={0}
-              onClick={() => this.mobileMenuSelect('blog-section')}
+              onClick={() => this.mobileMenuSelect('blog')}
             >
               Blog
             </div>
@@ -179,7 +179,7 @@ class Header extends Component {
               className="nav-item mobile-nav-4"
               role="button"
               tabIndex={0}
-              onClick={() => this.mobileMenuSelect('contact-section')}
+              onClick={() => this.mobileMenuSelect('contact')}
             >
               Contact
             </div>
