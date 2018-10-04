@@ -2,12 +2,14 @@ import React from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import * as PropTypes from 'prop-types'
 import Moment from 'react-moment'
+import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import { navigate } from 'gatsby';
 
 import Header from '../components/Header'
 import ArrowLeft from '../layouts/icons/arrow-left.svg'
 import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
@@ -34,7 +36,17 @@ class PostTemplate extends React.Component {
       )
     }
     return (
-      <div>
+      <Layout>
+        <Helmet
+          title="Matt Wood | Developer"
+          meta={[
+            { name: 'description', content: "Matt Wood's Developer Portfolio" },
+            {
+              name: 'keywords',
+              content: 'matt, wood, matt wood, developer, portfolio',
+            },
+          ]}
+        />
         <Header
           menu={true}
           blogPage={true}
@@ -77,7 +89,7 @@ class PostTemplate extends React.Component {
             </Row>
           </Grid>
         </div>
-      </div>
+      </Layout>
     )
   }
 }
