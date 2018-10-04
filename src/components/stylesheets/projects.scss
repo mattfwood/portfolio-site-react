@@ -65,6 +65,8 @@
   }
 
   &:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 
     .project-footer {

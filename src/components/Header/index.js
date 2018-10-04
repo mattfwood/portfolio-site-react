@@ -24,6 +24,14 @@ class Header extends Component {
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.handleResize)
     this.setInitialWidth()
+
+    const { hash } = window.location;
+
+    // if there's a hash on load, scroll to that section
+    if (hash) {
+      console.log('HASH FOUND');
+      this.props.scrollToSection(hash.replace('#', ''));
+    }
   }
 
   componentWillUnmount() {
@@ -59,6 +67,7 @@ class Header extends Component {
     // close mobile menu on select
     this.toggleMobileMenu()
     // scroll to section
+    console.log(section);
     this.props.scrollToSection(section)
   }
 
