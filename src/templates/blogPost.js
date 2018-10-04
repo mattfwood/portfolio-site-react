@@ -51,7 +51,7 @@ class PostTemplate extends React.Component {
     return (
       <Layout>
         <Helmet
-          title="Matt Wood | Developer"
+          title={`Matt Wood | ${title}`}
           meta={[
             { name: 'description', content: "Matt Wood's Developer Portfolio" },
             {
