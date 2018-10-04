@@ -288,3 +288,14 @@ blockquote {
   text-decoration: underline;
   color: rgb(35, 49, 66);
 }
+
+.read-more-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  > div:last-child {
+    text-align: right;
+  }
+}

@@ -4,6 +4,7 @@ import * as PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import Helmet from 'react-helmet';
 import { navigate } from 'gatsby';
+import Link from 'gatsby-link';
 
 import Header from '../components/Header';
 // import ArrowLeft from '../layouts/icons/arrow-left.svg';
@@ -20,7 +21,8 @@ class PostTemplate extends React.Component {
   }
 
   render() {
-    const { contentfulPost } = this.props.data;
+    // console.log(this.props)
+    const { contentfulPost, allContentfulPost } = this.props.data;
     const {
       title,
       body,
@@ -38,6 +40,14 @@ class PostTemplate extends React.Component {
         />
       );
     };
+
+    const allPosts = allContentfulPost.edges.map(edge => edge.node);
+    console.log(allPosts);
+    const currentPostIndex = allPosts.findIndex(post => post.id === contentfulPost.id);
+    const previousPost = allPosts[currentPostIndex - 1];
+    const nextPost = allPosts[currentPostIndex + 1];
+    console.log({ previousPost, nextPost });
+
     return (
       <Layout>
         <Helmet
@@ -89,6 +99,32 @@ class PostTemplate extends React.Component {
                   </div>
                   <hr />
                   <PostBody />
+                  <div className="read-more-section">
+                    <div>
+                      {previousPost && (
+                        <>
+                          <div>
+                            « Previous
+                          </div>
+                          <Link to={`/posts/${previousPost.id}`}>
+                            {previousPost.title}
+                          </Link>
+                        </>
+                    )}
+                    </div>
+                    <div>
+                      {nextPost && (
+                        <>
+                          <div>
+                          Next »
+                          </div>
+                          <Link to={`/posts/${nextPost.id}`}>
+                            {nextPost.title}
+                          </Link>
+                        </>
+                      )}
+                    </div>
+                  </div>
                   <Footer />
                 </div>
               </Col>
@@ -122,6 +158,16 @@ export const pageQuery = graphql`
         body
         childMarkdownRemark {
           html
+        }
+      }
+    }
+
+    allContentfulPost {
+      edges {
+        node {
+          id
+          createdAt
+          title
         }
       }
     }
