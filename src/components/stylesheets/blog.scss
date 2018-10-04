@@ -266,3 +266,25 @@
       font-size: 54px;
   }
 }
+
+blockquote {
+  font-family: 'Raleway';
+}
+
+/* BLOG PAGE */
+.page-heading {
+  font-size: 54px;
+  font-family: 'Raleway';
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.blog-page {
+  margin-top: 40px;
+}
+
+.blog-view-more {
+  text-align: right;
+  text-decoration: underline;
+  color: rgb(35, 49, 66);
+}

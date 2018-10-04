@@ -12,7 +12,7 @@ const Footer = () => {
         {/* DETAILS */}
         <Col md={12}>
           <div>
-Matt Wood
+            Matt Wood {' '}
             {year}
           </div>
           <div className="links-column">

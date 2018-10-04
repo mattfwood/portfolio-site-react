@@ -10,9 +10,10 @@ import ProjectContainer from '../components/Projects/ProjectContainer';
 import AboutSection from '../components/AboutSection';
 import BlogSection from '../components/blog/BlogSection';
 import Layout from '../components/Layout';
+import PostItem from '../components/blog/PostItem';
 
-const pageQuery = graphql`
-  query PageQuery {
+const postsQuery = graphql`
+  query PostsQuery {
     allContentfulPost {
       edges {
         node {
@@ -36,7 +37,7 @@ const pageQuery = graphql`
   }
 `;
 
-class IndexPage extends Component {
+class BlogPage extends Component {
   state = {
     heroAnimation: false,
   }
@@ -71,27 +72,31 @@ class IndexPage extends Component {
     return (
       <Layout>
         <StaticQuery
-          query={pageQuery}
+          query={postsQuery}
           render={(data) => {
             const posts = data.allContentfulPost.edges;
             const { heroAnimation } = this.state;
             return (
               <>
-                <Header scrollToSection={this.scrollToSection} menu />
-                <Hero animation={heroAnimation} />
+                <Header
+                  scrollToSection={this.scrollToSection}
+                  menu
+                  blogPage
+                  headerOpaque
+                />
                 <div
                   style={{
                     maxWidth: 960,
                     padding: '0px 1.0875rem 1.45rem',
                     paddingTop: 0,
                   }}
-                  className="page-content"
+                  className="page-content blog-page"
                 >
                   <Grid>
-                    <AboutSection />
-                    <ProjectContainer />
-                    <BlogSection posts={posts} />
-                    <ContactSection />
+                    <h1 className="page-heading">Blog</h1>
+                    {posts.map(post => (
+                      <PostItem post={post.node} key={post.node.id} />
+                    ))}
                   </Grid>
                 </div>
                 <Footer />
@@ -104,6 +109,6 @@ class IndexPage extends Component {
   }
 }
 
-// IndexPage.propTypes = propTypes;
+// BlogPage.propTypes = propTypes;
 
-export default IndexPage;
+export default BlogPage;

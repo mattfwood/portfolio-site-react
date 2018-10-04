@@ -5,6 +5,7 @@
   "author": "Matt Wood <m.wood0904@gmail.com>",
   "dependencies": {
     "babel-eslint": "^9.0.0",
+    "babel-plugin-styled-components": "^1.8.0",
     "bluebird": "^3.5.2",
     "contentful": "^7.0.3",
     "dotenv": "^6.0.0",
@@ -15,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sharp": "^2.0.5",
+    "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-remark-images": "^2.0.1",
     "gatsby-remark-prismjs": "^3.0.0",
     "gatsby-source-contentful": "^2.0.1",
@@ -27,7 +29,7 @@
     "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
-    "react-markdown": "^3.6.0",
+    "react-markdown": "^4.0.1",
     "react-marked-markdown": "^1.4.6",
     "react-moment": "^0.7.9",
     "react-syntax-highlighter": "^8.0.1",
@@ -35,7 +37,8 @@
     "remark": "^9.0.0",
     "remark-react": "^4.0.3",
     "sanitize-html": "^1.19.0",
-    "slash": "^2.0.0"
+    "slash": "^2.0.0",
+    "styled-components": "^3.4.9"
   },
   "keywords": [
     "gatsby"

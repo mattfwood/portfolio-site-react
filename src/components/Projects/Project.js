@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
-import LanguageBadge from './LanguageBadge';
+import LanguageBadge from '../LanguageBadge';
 
-import SourceCodeIcon from '../layouts/icons/source-code-icon.svg';
+import SourceCodeIcon from '../../layouts/icons/source-code-icon.svg';
 
 const propTypes = {
   project: PropTypes.objectOf(PropTypes.any).isRequired,

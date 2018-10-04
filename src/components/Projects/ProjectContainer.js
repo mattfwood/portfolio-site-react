@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Project from './Project';
 import projects from './projects';
 
-import mealPrepSunday from '../layouts/images/meal-prep-sunday-demo.gif';
-import portfolioSite from '../layouts/images/portfolio-site-demo.gif';
+import mealPrepSunday from '../../layouts/images/meal-prep-sunday-demo.gif';
+import portfolioSite from '../../layouts/images/portfolio-site-demo.gif';
 
 const gifs = {
   'meal-prep-sunday': mealPrepSunday,

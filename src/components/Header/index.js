@@ -4,11 +4,6 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import * as PropTypes from 'prop-types'
 
-const propTypes = {
-  scrollToSection: PropTypes.func.isRequired,
-  menu: PropTypes.bool,
-}
-
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -18,6 +13,16 @@ class Header extends Component {
       windowWidth: 0,
       mobileMenuOpen: false,
     }
+  }
+
+  static propTypes = {
+    scrollToSection: PropTypes.func.isRequired,
+    menu: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    menu: false,
+    blogPage: false,
   }
 
   componentDidMount() {
@@ -226,13 +231,6 @@ class Header extends Component {
       </div>
     )
   }
-}
-
-Header.propTypes = propTypes
-
-Header.defaultProps = {
-  menu: false,
-  blogPage: false,
 }
 
 export default Header
