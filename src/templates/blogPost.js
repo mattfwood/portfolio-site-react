@@ -3,39 +3,47 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 import * as PropTypes from 'prop-types'
 import Moment from 'react-moment'
 import Link from 'gatsby-link'
+import { navigate } from 'gatsby';
 
 import Header from '../components/Header'
 import ArrowLeft from '../layouts/icons/arrow-left.svg'
+import Footer from '../components/Footer';
 
 const propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 }
 
-const PostTemplate = props => {
-  const post = props.data.contentfulPost
-  // console.log(post);
-  const { title, body, subhead, createdAt } = post
-  const imageURL = post.image.resolutions.src
-
-  const PostBody = () => {
-    const html = body.childMarkdownRemark.html
-    // console.log(html);
-    return (
-      <div
-        className="blog-post-body"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    )
+class PostTemplate extends React.Component {
+  handleMenuClick = (section) => {;
+    navigate(`/#${section}`)
   }
 
-  // console.log(props);
+  render() {
+    const post = this.props.data.contentfulPost
+    // console.log(post);
+    const { title, body, subhead, createdAt } = post
+    const imageURL = post.image.resolutions.src
 
-  return (
-    <div>
-      <Header menu={false} headerOpaque scrollToSection={() => {}} />
-      <div className="page-content blog-post-container">
-        <Grid>
-          <Row>
+    const PostBody = () => {
+      const html = body.childMarkdownRemark.html
+      return (
+        <div
+          className="blog-post-body"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      )
+    }
+    return (
+      <div>
+        <Header
+          menu={true}
+          blogPage={true}
+          headerOpaque
+          scrollToSection={this.handleMenuClick}
+        />
+        <div className="page-content blog-post-container">
+          <Grid>
+            {/* <Row>
             <Link to="/" className="back-arrow-link">
               <div className="back-arrow-row">
                 <img
@@ -46,29 +54,32 @@ const PostTemplate = props => {
                 <div>Back</div>
               </div>
             </Link>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <div className="blog-post-wrapper">
-                <img className="blog-header-image" src={imageURL} alt={title} />
-                <div className="blog-post-heading">
+          </Row> */}
+            <Row>
+              <Col xs={12}>
+                <div className="blog-post-wrapper">
                   <h2 className="blog-post-title">{title}</h2>
-                  <h4 className="blog-post-subhead">{subhead}</h4>
-                  <h5>
-                    <Moment className="blog-post-date" format="MMM DD, YYYY">
-                      {createdAt}
-                    </Moment>
-                  </h5>
+                  <img className="blog-header-image" src={imageURL} alt={title} />
+                  <div className="blog-post-heading">
+                    {/* <h4 className="blog-post-subhead">{subhead}</h4> */}
+                    <h5 className="blog-post-date">
+                      Published on {' '}
+                      <Moment format="MMM DD, YYYY">
+                        {createdAt}
+                      </Moment>
+                    </h5>
+                  </div>
+                  <hr />
+                  <PostBody />
+                  <Footer />
                 </div>
-                <hr />
-                <PostBody />
-              </div>
-            </Col>
-          </Row>
-        </Grid>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 PostTemplate.propTypes = propTypes

@@ -37,7 +37,7 @@ class ProjectContainer extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div className="project-section">
+      <div className="project-section" id="project">
         <h2 className="section-header">
           <span role="img" aria-label="construction crane emoji">
             🏗️

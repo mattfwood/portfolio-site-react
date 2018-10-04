@@ -41,12 +41,6 @@ class Header extends Component {
     this.setState({
       scrollHeight: window.scrollY,
     })
-
-    const removeAnimal = (zoo, animal) => {
-      const animalIndex = zoo.findIndex(item => item.includes(animal))
-      zoo.splice(animalIndex, 1)
-      return zoo
-    }
   }
 
   handleResize = () => {
@@ -56,7 +50,6 @@ class Header extends Component {
   }
 
   toggleMobileMenu = () => {
-    // console.log('MOBILE MENU TOGGLE');
     this.setState({
       mobileMenuOpen: !this.state.mobileMenuOpen,
     })
@@ -84,7 +77,7 @@ class Header extends Component {
                   role="button"
                   className="nav-item"
                   tabIndex={0}
-                  onClick={() => scrollToSection('about-section')}
+                  onClick={() => scrollToSection('about')}
                 >
                   About
                 </div>
@@ -94,7 +87,7 @@ class Header extends Component {
                   className="nav-item"
                   role="button"
                   tabIndex={0}
-                  onClick={() => scrollToSection('project-section')}
+                  onClick={() => scrollToSection('project')}
                 >
                   Projects
                 </div>
@@ -104,7 +97,7 @@ class Header extends Component {
                   className="nav-item"
                   role="button"
                   tabIndex={0}
-                  onClick={() => scrollToSection('blog-section')}
+                  onClick={() => scrollToSection('blog')}
                 >
                   Blog
                 </div>
@@ -114,7 +107,7 @@ class Header extends Component {
                   className="nav-item"
                   role="button"
                   tabIndex={0}
-                  onClick={() => scrollToSection('contact-section')}
+                  onClick={() => scrollToSection('contact')}
                 >
                   Contact
                 </div>
@@ -201,16 +194,16 @@ class Header extends Component {
     }
 
     const headerOpaque = this.props.headerOpaque ? 'header-opaque' : ''
+    const blogPage = this.props.blogPage ? 'blogPage' : ''
 
     return (
       <div
         style={{
           background: '#233142',
-          marginBottom: '1.45rem',
         }}
         className={`header ${
           scrollHeight === 0 ? 'transparent' : ''
-        } ${headerOpaque}`}
+        } ${headerOpaque} ${blogPage}`}
       >
         <Grid>
           <Row middle="xs" between="xs" style={{ width: '100%' }}>
@@ -238,6 +231,7 @@ Header.propTypes = propTypes
 
 Header.defaultProps = {
   menu: false,
+  blogPage: false,
 }
 
 export default Header

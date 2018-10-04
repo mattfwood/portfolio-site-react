@@ -9,7 +9,7 @@ zoo.splice(ratIndex, 1)
 // console.log(zoo) // => returns ['🦓', '🦖']
 
 const AboutSection = () => (
-  <div className="about-section">
+  <div className="about-section" id="about">
     <h2 className="section-header">
       <span role="img" aria-label="person surprised emoji">
         🙇‍{' '}

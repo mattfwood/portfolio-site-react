@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "matt-wood-portfolio-site",
+  "description": "Personal Portfolio Site for Matt Wood",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Matt Wood <m.wood0904@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-eslint": "^9.0.0",

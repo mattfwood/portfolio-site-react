@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-flexbox-grid'
 
 const ContactSection = () => (
-  <div className="contact-section">
+  <div className="contact-section" id="contact">
     <h2 className="section-header">
       <span role="img" aria-label="megaphone emoji">
         📣{' '}

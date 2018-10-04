@@ -9,7 +9,7 @@ const propTypes = {
 }
 
 const BlogSection = ({ posts }) => (
-  <div className="blog-section">
+  <div className="blog-section" id="blog">
     <Grid>
       <h2 className="section-header">
         <span role="img" aria-label="keyboard emoji">

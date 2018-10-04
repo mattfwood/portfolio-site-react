@@ -49,7 +49,7 @@ class IndexPage extends Component {
   }
 
   scrollToSection = clickedSection => {
-    const section = document.querySelector(`.${clickedSection}`)
+    const section = document.querySelector(`#${clickedSection}`)
     const offsetTop = section.offsetTop - 125
 
     window.scroll({

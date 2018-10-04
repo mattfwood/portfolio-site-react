@@ -5,15 +5,21 @@
   justify-content: space-between;
   align-items: center;
   color: #FFF;
-  position: fixed;
   top: 0; // width: 100%;
-  width: 100vw;
+  width: 100%;
   z-index: 5000;
   font-weight: 400;
+  position: fixed;
+  margin-bottom: 1.45rem;
   transition: all 300ms ease;
   a {
     color: #FFF !important;
   }
+}
+
+.header.blogPage {
+  position: relative;
+  margin-bottom: 0;
 }
 
 .nav>div+div {
@@ -46,12 +52,12 @@
 
 // FOOTER
 .Footer {
-  background-color: #343a40;
-  color: #FFF;
+  // background-color: #343a40;
+  color: #343a40;
   padding: 1.5rem 2rem;
   text-align: center;
   a {
-    color: #FFF;
+    color: #343a40;
   }
   h4 {
     margin-bottom: 10px;
