@@ -29,7 +29,7 @@ class PostTemplate extends React.Component {
       // subhead,
       createdAt,
     } = contentfulPost;
-    const imageURL = contentfulPost.image.resolutions.src;
+    const imageURL = contentfulPost.image.fixed.src;
 
     const PostBody = () => {
       const html = body.childMarkdownRemark.html;
@@ -148,7 +148,7 @@ export const pageQuery = graphql`
       subhead
       createdAt
       image {
-        resolutions {
+        fixed {
           src
         }
       }

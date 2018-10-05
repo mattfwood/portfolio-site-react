@@ -14,7 +14,7 @@ const propTypes = {
     }).isRequired,
     subhead: PropTypes.string.isRequired,
     image: PropTypes.shape({
-      resolutions: PropTypes.shape({
+      fixed: PropTypes.shape({
         src: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
@@ -28,7 +28,7 @@ const PostPreview = ({ post }) => (
       <Link to={`/posts/${post.id}`}>
         <div
           className="post-title-wrapper"
-          style={{ background: `url(${post.image.resolutions.src})` }}
+          style={{ background: `url(${post.image && post.image.fixed && post.image.fixed.src})`, backgroundColor: 'rgb(35, 49, 66)' }}
         >
           <div className="post-preview-overlay">
             <div className="post-text-wrapper">

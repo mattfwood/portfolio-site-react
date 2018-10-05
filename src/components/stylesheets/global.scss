@@ -690,12 +690,21 @@ td:last-child {
 
 tt,
 code {
-	background-color: hsla(0, 0%, 0%, 0.04);
+	// background-color: hsla(0, 0%, 0%, 0.04);
+	background-color: #ddd;
 	border-radius: 3px;
-	font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
-	padding: 0;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
+	font-family: "Source Code Pro", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+	// padding: 0;
+	// padding-top: 0.2em;
+	// padding-bottom: 0.2em;
+}
+
+p > code {
+	padding: 1px 5px;
+}
+
+p > code:after {
+	content: "";
 }
 
 pre code {

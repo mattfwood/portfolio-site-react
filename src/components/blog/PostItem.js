@@ -89,7 +89,7 @@ class PostItem extends Component {
     return (
       <PostRow>
         <PostImage>
-          <img src={post.image.resolutions.src} alt="" />
+          <img src={post.image.fixed.src} alt="" />
         </PostImage>
         <PostContent>
           <Link to={`/posts/${post.id}`}>

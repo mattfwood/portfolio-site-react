@@ -22,7 +22,7 @@ const postsQuery = graphql`
           subhead
           createdAt
           image {
-            resolutions {
+            fixed {
               src
             }
           }

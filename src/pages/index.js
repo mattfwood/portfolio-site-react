@@ -21,7 +21,7 @@ const pageQuery = graphql`
           subhead
           createdAt
           image {
-            resolutions {
+            fixed {
               src
             }
           }
@@ -75,6 +75,7 @@ class IndexPage extends Component {
           render={(data) => {
             const posts = data.allContentfulPost.edges;
             const { heroAnimation } = this.state;
+            console.log(data);
             return (
               <>
                 <Header scrollToSection={this.scrollToSection} menu />
