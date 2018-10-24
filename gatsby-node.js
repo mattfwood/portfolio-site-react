@@ -1,66 +1,85 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const _ = require('lodash')
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
-// You can delete this file if you're not using it
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
-const _ = require('lodash');
-const Promise = require('bluebird');
-const path = require('path');
-const slash = require('slash');
-
-// Implement the Gatsby API “createPages”. This is
-// called after the Gatsby bootstrap is finished so you have
-// access to any information necessary to programmatically
-// create pages.
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-  return new Promise((resolve, reject) => {
-    // The “graphql” function allows us to run arbitrary
-    // queries against the local Contentful graphql schema. Think of
-    // it like the site has a built-in database constructed
-    // from the fetched data that you can run queries against.
-    graphql(
-      `
-        {
-          allContentfulPost(limit: 1000) {
-            edges {
-              node {
-                id
-              }
+  return graphql(`
+    {
+      allMarkdownRemark(limit: 1000) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+              templateKey
             }
           }
         }
-      `,
-    )
-      .then((result) => {
-        if (result.errors) {
-          reject(result.errors);
-        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
 
-        // Create blogPost pages
-        const blogPostTemplate = path.resolve('./src/templates/blogPost.js');
-        // We want to create a detailed page for each
-        // blogPost node. We'll just use the Contentful id for the slug.
-        _.each(result.data.allContentfulPost.edges, (edge) => {
-          // Gatsby uses Redux to manage its internal state.
-          // Plugins and sites can use functions like "createPage"
-          // to interact with Gatsby.
-          createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
-            path: `/posts/${edge.node.id}/`,
-            component: slash(blogPostTemplate),
-            context: {
-              id: edge.node.id,
-            },
-          });
-        });
-        resolve();
-      });
-  });
-};
+    const posts = result.data.allMarkdownRemark.edges
+
+    posts.forEach(edge => {
+      const id = edge.node.id
+      createPage({
+        path: edge.node.fields.slug,
+        tags: edge.node.frontmatter.tags,
+        component: path.resolve(
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+        ),
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      })
+    })
+
+    // Tag pages:
+    let tags = []
+    // Iterate through each post, putting all found tags into `tags`
+    posts.forEach(edge => {
+      if (_.get(edge, `node.frontmatter.tags`)) {
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
+    })
+    // Eliminate duplicate tags
+    tags = _.uniq(tags)
+
+    // Make tag pages
+    tags.forEach(tag => {
+      const tagPath = `/tags/${_.kebabCase(tag)}/`
+
+      createPage({
+        path: tagPath,
+        component: path.resolve(`src/templates/tags.js`),
+        context: {
+          tag,
+        },
+      })
+    })
+  })
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}

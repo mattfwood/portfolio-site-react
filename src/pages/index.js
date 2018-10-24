@@ -1,110 +1,79 @@
-import React, { Component } from 'react';
-import { Grid } from 'react-flexbox-grid';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import ContactSection from '../components/Contact/ContactSection';
-import ProjectContainer from '../components/Projects/ProjectContainer';
-import AboutSection from '../components/AboutSection';
-import BlogSection from '../components/blog/BlogSection';
-import Layout from '../components/Layout';
+export default class IndexPage extends React.Component {
+  render() {
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
-const pageQuery = graphql`
-  query PageQuery {
-    allContentfulPost {
+    return (
+      <Layout>
+        <section className="section">
+          <div className="container">
+            <div className="content">
+              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+            </div>
+            {posts
+              .map(({ node: post }) => (
+                <div
+                  className="content"
+                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                  key={post.id}
+                >
+                  <p>
+                    <Link className="has-text-primary" to={post.fields.slug}>
+                      {post.frontmatter.title}
+                    </Link>
+                    <span> &bull; </span>
+                    <small>{post.frontmatter.date}</small>
+                  </p>
+                  <p>
+                    {post.excerpt}
+                    <br />
+                    <br />
+                    <Link className="button is-small" to={post.fields.slug}>
+                      Keep Reading →
+                    </Link>
+                  </p>
+                </div>
+              ))}
+          </div>
+        </section>
+      </Layout>
+    )
+  }
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+}
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] },
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+    ) {
       edges {
         node {
+          excerpt(pruneLength: 400)
           id
-          title
-          subhead
-          createdAt
-          image {
-            fixed {
-              src
-            }
+          fields {
+            slug
           }
-
-          body {
-            id
-            body
+          frontmatter {
+            title
+            templateKey
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }
     }
   }
-`;
-
-class IndexPage extends Component {
-  state = {
-    heroAnimation: false,
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ heroAnimation: true });
-    }, 500);
-
-    const { hash } = window.location;
-
-    if (hash) {
-      this.scrollToSection(hash.replace('#', ''));
-    }
-  }
-
-  scrollToSection = (clickedSection) => {
-    const section = document.querySelector(`#${clickedSection}`);
-    const offsetTop = section.offsetTop - 125;
-    // const offsetTop = section.offsetTop;
-
-    window.scroll({
-      top: offsetTop,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }
-
-  render() {
-    // const posts = this.props.data.allContentfulPost.edges;
-    // console.log(posts);
-    return (
-      <Layout>
-        <StaticQuery
-          query={pageQuery}
-          render={(data) => {
-            const posts = data.allContentfulPost.edges;
-            const { heroAnimation } = this.state;
-            console.log(data);
-            return (
-              <>
-                <Header scrollToSection={this.scrollToSection} menu />
-                <Hero animation={heroAnimation} />
-                <div
-                  style={{
-                    maxWidth: 960,
-                    padding: '0px 1.0875rem 1.45rem',
-                    paddingTop: 0,
-                  }}
-                  className="page-content"
-                >
-                  <Grid>
-                    <AboutSection />
-                    <ProjectContainer />
-                    <BlogSection posts={posts} />
-                    <ContactSection />
-                  </Grid>
-                </div>
-                <Footer />
-              </>
-            );
-          }}
-        />
-      </Layout>
-    );
-  }
-}
-
-// IndexPage.propTypes = propTypes;
-
-export default IndexPage;
+`

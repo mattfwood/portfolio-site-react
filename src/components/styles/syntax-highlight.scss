@@ -1,0 +1,136 @@
+.gatsby-highlight {
+  background: #282c34; // color: #ffffff;
+  color: #bbbbbb;
+  border-radius: 10px;
+  overflow: auto;
+  tab-size: 1.5em;
+  -moz-tab-size: 1.5em;
+  margin-bottom: 1rem;
+}
+
+// .gatsby-highlight code[class*='language-'],
+.gatsby-highlight pre[class*='language-'],
+.gatsby-highlight pre.prism-code {
+  height: auto !important;
+  margin: 1rem;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 10px !important;
+  overflow: auto;
+}
+
+.gatsby-highlight+.gatsby-highlight {
+  margin-top: 20px;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #14161a;
+  display: block;
+  margin: -0.125rem calc(-1rem - 15px);
+  padding: 0.125rem calc(1rem + 15px);
+}
+
+.token.attr-name {
+  color: #c5a5c5;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5c6370;
+}
+
+.token.property,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #c678dd;
+}
+
+.token.boolean {
+  color: #56b6c2;
+}
+
+.token.tag {
+  color: #e06c75;
+}
+
+.token.string {
+  color: #e5c07b;
+}
+
+.token.punctuation {
+  // color: #5fb3b3;
+  color: #bbbbbb;
+}
+
+.token.selector,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #d8dee9;
+}
+
+.token.function {
+  // color: #79b6f2;
+  color: #98c379;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  // color: #d7deea;
+  color: #e06c75;
+}
+
+.token.attr-value {
+  color: #8dc891;
+}
+
+.token.keyword {
+  // color: #c5a5c5;
+  color: #e06c75;
+}
+
+.token.atrule,
+.token.class-name {
+  color: #61afef;
+}
+
+.token.important {
+  font-weight: 400;
+}
+
+.token.bold {
+  font-weight: 700;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+}
