@@ -30,7 +30,6 @@ const Layout = ({ children }) => (
       </script>
     </Helmet>
     {children}
-
   </div>
 );
 
