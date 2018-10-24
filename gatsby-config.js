@@ -8,6 +8,21 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-128081638-1",
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Avoids sending pageview hits from custom paths
+        // Enables Google Optimize using your container Id
+        // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // Any additional create only fields (optional)
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "example.com",
+      },
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'wetfygr1eqh0',
