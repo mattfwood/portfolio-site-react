@@ -6,9 +6,9 @@ import './styles/index.scss'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="Matt Wood | Web Developer" />
     <Navbar />
-    <div>{children}</div>
+    <div className="main-content">{children}</div>
   </div>
 )
 
