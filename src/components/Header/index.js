@@ -134,6 +134,7 @@ class Header extends Component {
             role="button"
             onClick={this.toggleMobileMenu}
             tabIndex={0}
+            aria-label="Mobile menu open button"
           >
             <div className="menu-line hb-top" />
             <div className="menu-line hb-mid" />
@@ -145,6 +146,7 @@ class Header extends Component {
               role="button"
               onClick={this.toggleMobileMenu}
               tabIndex={0}
+              aria-label="mobile menu close button"
             >
               <svg
                 version="1.1"

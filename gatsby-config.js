@@ -79,8 +79,8 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'raleway:400,500,900',
-          'merriweather:400',
+          // 'raleway:400,500,900',
+          // 'merriweather:400',
           'source sans pro:300,400,400i,500,700', // you can also specify font weights and styles
           'source code pro:400,500'
         ],
