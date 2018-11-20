@@ -30,6 +30,7 @@
     "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
+    "react-lazyload": "^2.3.0",
     "react-markdown": "^4.0.1",
     "react-marked-markdown": "^1.4.6",
     "react-moment": "^0.7.9",

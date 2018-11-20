@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import * as PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 import LanguageBadge from '../LanguageBadge';
 
 import SourceCodeIcon from '../../layouts/icons/source-code-icon.svg';
@@ -45,11 +46,13 @@ const Project = ({ project, gifs }) => {
               </h3>
             </a>
             <a href={project.svn_url} className="project-title">
-              <img
-                className="source-icon"
-                src={SourceCodeIcon}
-                alt="Github icon"
-              />
+              <LazyLoad>
+                <img
+                  className="source-icon"
+                  src={SourceCodeIcon}
+                  alt="Github icon"
+                />
+              </LazyLoad>
             </a>
           </div>
         </Col>
@@ -57,10 +60,12 @@ const Project = ({ project, gifs }) => {
       <Row>
         <Col xs={12} md={6}>
           <div className="project-image-wrapper">
-            <img
-              src={gifs[project.name]}
-              alt={`gif of ${project.name.replace(/-/g, ' ')}`}
-            />
+            <LazyLoad height={500}>
+              <img
+                src={gifs[project.name]}
+                alt={`gif of ${project.name.replace(/-/g, ' ')}`}
+              />
+            </LazyLoad>
           </div>
         </Col>
         <Col xs={12} md={6}>
