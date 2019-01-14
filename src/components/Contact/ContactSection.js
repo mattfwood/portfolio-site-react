@@ -16,7 +16,7 @@ const ContactSection = () => (
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="contact-form" value="contact" />
+        <input type="hidden" name="bot-field" value="contact" />
         <Row className="form-row contact-info-row">
           <Col xs={12} md={6}>
             <input
@@ -38,6 +38,7 @@ const ContactSection = () => (
         <div className="form-row">
           <textarea name="message" placeholder="Message" />
         </div>
+        {/* <div data-netlify-recaptcha="true"></div> */}
         <div className="form-row">
           <button type="submit">Send</button>
         </div>
